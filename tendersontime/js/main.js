@@ -78,62 +78,86 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const prevBtn = document.getElementById("testimonial-prev");
-    const nextBtn = document.getElementById("testimonial-next");
-    const track = document.querySelector(".rightAlign-track");
-    const reviewSet = document.querySelector(".review-set:not(.copy)");
+    const initManualSlider = ({
+        trackSelector,
+        prevSelector,
+        nextSelector,
+        itemSelector,
+        getVisibleItems,
+        resetOnResize = true
+    }) => {
+        const prevBtn = document.querySelector(prevSelector);
+        const nextBtn = document.querySelector(nextSelector);
+        const track = document.querySelector(trackSelector);
+        const firstSet = track ? track.querySelector(itemSelector) : null;
 
-    if (!track || !prevBtn || !nextBtn || !reviewSet) return;
+        if (!track || !prevBtn || !nextBtn || !firstSet) return;
 
-    const mq = window.matchMedia("(min-width: 769px)");
-    const cards = Array.from(reviewSet.querySelectorAll(".review"));
-    const visibleCards = 2;
+        const cards = Array.from(firstSet.querySelectorAll(".review, .card"));
+        if (!cards.length) return;
 
-    if (!cards.length) return;
+        let currentIndex = 0;
 
-    let currentIndex = 0;
-    const maxIndex = Math.max(cards.length - visibleCards, 0);
+        const getMaxIndex = () => {
+            const visibleItems = getVisibleItems();
+            return Math.max(cards.length - visibleItems, 0);
+        };
 
-    const updateDesktopSlider = () => {
-        if (!mq.matches) {
-            track.style.transition = "none";
-            track.style.transform = "";
-            return;
+        const updateSlider = () => {
+            const firstCard = cards[0];
+            const gap = parseFloat(window.getComputedStyle(track).gap || "0");
+            const step = firstCard.getBoundingClientRect().width + gap;
+            const maxIndex = getMaxIndex();
+            currentIndex = Math.min(currentIndex, maxIndex);
+
+            track.style.transition = "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)";
+            track.style.transform = `translateX(-${currentIndex * step}px)`;
+        };
+
+        nextBtn.addEventListener("click", () => {
+            const maxIndex = getMaxIndex();
+            currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+            updateSlider();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            const maxIndex = getMaxIndex();
+            currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+            updateSlider();
+        });
+
+        [prevBtn, nextBtn].forEach((button) => {
+            button.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    button.click();
+                }
+            });
+        });
+
+        if (resetOnResize) {
+            window.addEventListener("resize", () => {
+                currentIndex = 0;
+                updateSlider();
+            });
         }
 
-        const firstCard = cards[0];
-        const gap = parseFloat(window.getComputedStyle(track).gap || "0");
-        const step = firstCard.getBoundingClientRect().width + gap;
-
-        track.style.transition = "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)";
-        track.style.transform = `translateX(-${currentIndex * step}px)`;
+        updateSlider();
     };
 
-    nextBtn.addEventListener("click", () => {
-        if (!mq.matches) return;
-        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
-        updateDesktopSlider();
+    initManualSlider({
+        trackSelector: ".rightAlign-track",
+        prevSelector: "#testimonial-prev",
+        nextSelector: "#testimonial-next",
+        itemSelector: ".review-set:not(.copy)",
+        getVisibleItems: () => (window.innerWidth <= 768 ? 1 : 2)
     });
 
-    prevBtn.addEventListener("click", () => {
-        if (!mq.matches) return;
-        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
-        updateDesktopSlider();
+    initManualSlider({
+        trackSelector: ".lower-track",
+        prevSelector: "#why-prev",
+        nextSelector: "#why-next",
+        itemSelector: ".lower-set:not(.copy)",
+        getVisibleItems: () => (window.innerWidth <= 768 ? 1 : 2)
     });
-
-    [prevBtn, nextBtn].forEach((button) => {
-        button.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                button.click();
-            }
-        });
-    });
-
-    window.addEventListener("resize", updateDesktopSlider);
-    mq.addEventListener("change", () => {
-        currentIndex = 0;
-        updateDesktopSlider();
-    });
-    updateDesktopSlider();
 });

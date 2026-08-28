@@ -188,6 +188,18 @@ img {
     white-space: nowrap;
 }
 
+.update-statuss {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px 8px 12px;
+    border-radius: 20px;
+    background: #e8f3ff;
+    color: #4b5563;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
 .status-dot {
     width: 12px;
     height: 12px;
@@ -196,6 +208,11 @@ img {
     flex-shrink: 0;
     animation: statusPulse 1.5s ease-in-out infinite;
 }
+
+.short{
+    display: none;
+}
+
 
 @keyframes statusPulse {
     0% {
@@ -503,6 +520,7 @@ img {
     gap: 7px;
     color: #ffffff;
     font-size: 16px;
+    font-weight: 400;
 }
 
 .hero-feature .material-symbols-outlined {
@@ -2529,6 +2547,10 @@ img {
 ================================================================ */
 @media (max-width: 1100px) {
 
+    .stats-section .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     /* HERO */
     .hero {
         padding: 60px 0 90px;
@@ -2676,6 +2698,15 @@ img {
 ================================================================ */
 @media (max-width: 900px) {
 
+    .stats-section .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .trusted-logo img {
+        filter: none;
+        opacity: 1;
+    }
+
     /* HERO */
     .hero-title {
         font-size: clamp(26px, 6vw, 42px);
@@ -2807,14 +2838,65 @@ img {
         align-items: flex-start;
     }
 
+        .update-status{
+        display: none;
+    }
+
+    .search-header{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .update-statuss{
+        display: flex;
+    }
+
     /* STATS */
-    .stats-section {
-        padding: 24px;
-        margin-top: 0;
+   .stats-section {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        position: relative;
+        top: auto;
+    }
+
+        .stats-container {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+
+    .stats-heading {
+        margin-bottom: 24px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
     .stat-item {
-        flex: 1 1 100%;
+        padding: 20px;
+        border: 1px solid #d8d8d8;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: #fff;
+    }
+
+    .stat-item > .material-symbols-outlined {
+        flex-shrink: 0;
+        font-size: 24px;
+    }
+
+    .stat-text h3 {
+        margin: 0 0 4px;
+    }
+
+    .stat-text p {
+        margin: 0;
     }
 
     /* DEFENCE SECTION */
@@ -2947,17 +3029,80 @@ img {
     }
 
     .hero-features {
-        flex-direction: column;
-        align-items: flex-start;
+        display: none;
+    }
+
+    .popular-categories span{
+        width: 100% !important;
+    }
+    .advanced-search{
+        justify-content: right;
+        width: 100%;
+    }
+
+    .search-footer{
+        border: none;
+        padding-top: 0;
+    }
+
+    .update-status{
+        display: none;
+    }
+
+    .search-header{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .update-statuss{
+        display: flex;
+    }
+
+   .stats-section {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        position: relative;
+        top: auto;
+    }
+
+    .stats-container {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+
+    .stats-heading {
+        margin-bottom: 24px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
     }
 
-    .stats-heading h2 {
-        font-size: 14px;
+    .stat-item {
+        padding: 20px;
+        border: 1px solid #d8d8d8;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: #fff;
+    }
+
+    .stat-item > .material-symbols-outlined {
+        flex-shrink: 0;
+        font-size: 24px;
     }
 
     .stat-text h3 {
-        font-size: 20px;
+        margin: 0 0 4px;
+    }
+
+    .stat-text p {
+        margin: 0;
     }
 
     .defence-title {
@@ -3021,6 +3166,10 @@ img {
         font-size: 24px;
     }
 
+    .card .card-para p{
+        font-size: 14px;
+    }
+
     .faq-eyebrow {
         font-size: 24px;
     }
@@ -3046,17 +3195,55 @@ img {
         padding: 6px 9px;
     }
 
-    .stats-section {
-        padding: 16px;
+        .hero {
+        height: auto;
+        padding: 40px 0 40px 0;
+    }
+
+   .stats-section {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        position: relative;
+        top: auto;
+    }
+
+        .stats-container {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+
+    .stats-heading {
+        margin-bottom: 24px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
 
     .stat-item {
-        gap: 10px;
+        padding: 20px;
+        border: 1px solid #d8d8d8;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: #fff;
     }
 
-    .stat-item .material-symbols-outlined {
-        font-size: 26px;
-        padding: 6px;
+    .stat-item > .material-symbols-outlined {
+        flex-shrink: 0;
+        font-size: 24px;
+    }
+
+    .stat-text h3 {
+        margin: 0 0 4px;
+    }
+
+    .stat-text p {
+        margin: 0;
     }
 
     .column-header h2 {
@@ -3101,6 +3288,15 @@ img {
 ================================================================ */
 @media (max-width: 768px) {
 
+    .stats-section .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .trusted-logo img {
+        filter: none;
+        opacity: 1;
+    }
+
     /* ---------- SAFETY: prevent nested flex/grid items from
     growing wider than the viewport because of the nowrap
     carousels inside them. This is the actual fix for the
@@ -3130,8 +3326,9 @@ img {
     /* ---------- 1. STATS SECTION — FULL WIDTH, BELOW HERO ---------- */
     .hero {
         height: auto;
-        padding-bottom: 48px;
+        padding: 40px 0 40px 0;
     }
+
 
     .stats-section {
         width: 100%;
@@ -3140,6 +3337,45 @@ img {
         position: relative;
         top: auto;
     }
+
+        .stats-container {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+
+    .stats-heading {
+        margin-bottom: 24px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .stat-item {
+        padding: 20px;
+        border: 1px solid #d8d8d8;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: #fff;
+    }
+
+    .stat-item > .material-symbols-outlined {
+        flex-shrink: 0;
+        font-size: 24px;
+    }
+
+    .stat-text h3 {
+        margin: 0 0 4px;
+    }
+
+    .stat-text p {
+        margin: 0;
+    }
+
 
 
     /* ---------- 2. HOW DEFENCE WORKS — REMOVE IMAGE ---------- */
@@ -3229,7 +3465,7 @@ img {
     }
 
 
-    /* Why Defence Tenders — infinite marquee */
+    /* Why Defence Tenders — manual slider */
     .defence-tender-container {
         min-width: 0;
     }
@@ -3246,8 +3482,9 @@ img {
         display: flex;
         flex-wrap: nowrap;
         width: max-content;
-        animation: scrollCards 24s linear infinite;
+        gap: 20px;
         will-change: transform;
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .lower-set,
@@ -3264,28 +3501,41 @@ img {
         display: flex;
     }
 
-    @keyframes scrollCards {
-        from {
-            transform: translateX(0);
-        }
+    .why-controls {
+        display: flex;
+        justify-content: flex-start;
+        gap: 12px;
+        margin-top: 20px;
+    }
 
-        to {
-            transform: translateX(-50%);
-        }
+    .why-controls .material-symbols-outlined {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid #d8d8d8;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
     }
 
 
-    /* Testimonials — one card, infinite RTL marquee */
+    /* Testimonials — manual slider */
     .tes-container {
         min-width: 0;
     }
 
     .rightAlign {
         container-type: inline-size;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         width: 100%;
-        overflow: hidden;
-        padding: 8px 0;
+        overflow: visible;
+        padding: 8px 0 0;
+        gap: 16px;
     }
 
     .rightAlign-viewport {
@@ -3298,10 +3548,32 @@ img {
         flex-wrap: nowrap;
         width: max-content;
         gap: 0;
-        animation: scrollReviews 28s linear infinite;
         will-change: transform;
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
         transform: none;
-        transition: none;
+    }
+
+    .rightAlign > .material-symbols-outlined {
+        order: 2;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid #d8d8d8;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #testimonial-prev {
+        margin-right: 8px;
+    }
+
+    .rightAlign .review {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
     }
 
     .review-set,
@@ -3320,7 +3592,7 @@ img {
     }
 
     .rightAlign > .material-symbols-outlined {
-        display: none;
+        display: flex;
     }
 
     @keyframes scrollReviews {
