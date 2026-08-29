@@ -1,0 +1,1331 @@
+.testimonials {
+    width: 100%;
+    background-color: var(--primary-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 104px;
+    padding: 80px 0 80px 0;
+}
+
+.testimonials .tes-container {
+    width: min(1400px, calc(100% - 80px));
+    margin: 0 auto;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 32px;
+
+}
+
+.tes-container .left-align {
+    /* flex: 1 1 320px; */
+    max-width: 458px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-align .heading h1 {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--primary-text);
+    line-height: 1.15;
+    padding-bottom: 8px;
+}
+
+.left-align .para p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--body-text);
+    line-height: 1.5;
+    padding-bottom: 24px;
+}
+
+.left-align .read-more {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.left-align .read-more a {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
+.tes-container .rightAlign {
+    flex: 2 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    overflow: visible;
+    position: relative;
+}
+
+.rightAlign span {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+}
+
+.testimonial-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 3;
+}
+
+#testimonial-prev,
+#testimonial-next {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #d8d8d8;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.rightAlign-viewport {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.rightAlign-track {
+    display: flex;
+    gap: 24px;
+    min-width: 0;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+.review-set {
+    display: contents;
+}
+
+.review-set.copy {
+    display: none;
+}
+
+.rightAlign .review {
+    flex: 0 0 280px;
+    width: 280px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.rightAlign .review-logo {
+    width: 88px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.rightAlign .review-logo img {
+    width: 88px;
+    height: 28px;
+    max-width: 88px;
+    max-height: 28px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.rightAlign .review-text {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 16px;
+}
+
+.rightAlign .review-text p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--body-text);
+    line-height: 1.5;
+}
+
+.rightAlign .person {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.rightAlign .person .img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.rightAlign .person .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rightAlign .person-meta {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.rightAlign .person .name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-text);
+}
+
+.rightAlign .person .position {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--light-text);
+}
+
+@media (max-width: 1300px) {
+
+    .stats-container .stats-grid {
+        justify-content: flex-start;
+    }
+
+    .stat-item {
+        flex: 1 1 45%;
+    }
+}
+
+
+/* ================================================================
+   1100px — tablets landscape
+================================================================ */
+@media (max-width: 1100px) {
+
+    .stats-container .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .stats-container .stat-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 60px 0 90px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    /* DEFENCE SECTION */
+    .defence-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .defence-content {
+        max-width: 100%;
+    }
+
+    .trusted-logos {
+        max-width: 100%;
+    }
+
+    .defence-visual {
+        justify-content: center;
+    }
+
+    .visual-card {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* DISCOVER CARDS */
+    .columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* MARKET SECTION */
+    .market-container,
+    .market-container .blur {
+        flex-direction: column;
+    }
+
+    .market-left {
+        padding: 32px 28px 8px;
+    }
+
+    .market-right {
+        padding: 8px 28px 28px;
+    }
+
+    .market-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .market-item:nth-child(4n) {
+        border-right: 1px solid #eeeeee;
+    }
+
+    .market-item:nth-child(3n) {
+        border-right: none;
+    }
+
+    .market-item:nth-last-child(-n + 4) {
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .market-item:nth-last-child(-n + 3) {
+        border-bottom: none;
+    }
+
+    .market-region-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* FAQ */
+    .faq-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .faq-list,
+    .faq-question,
+    .faq-content {
+        width: 100%;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+        padding: 60px 0;
+    }
+
+    .tes-container .left-align {
+        max-width: 100%;
+    }
+
+    
+}
+
+/* Desktop: button-driven 2-card carousel; mobile keeps automatic marquee */
+@media (min-width: 769px) {
+    .rightAlign {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        overflow: visible;
+    }
+
+    /* Buttons should sit OUTSIDE the viewport (one on each side), not
+       overlapping it. Turn the wrapper into a transparent layout box
+       so its two spans become direct flex children of .rightAlign,
+       then flank the viewport with order. */
+    .testimonial-nav {
+        display: contents;
+    }
+
+    #testimonial-prev,
+    #testimonial-next {
+        flex: 0 0 auto;
+        cursor: pointer;
+        user-select: none;
+        align-self: center;
+        z-index: 2;
+    }
+
+    #testimonial-prev {
+        order: -1;
+    }
+
+    #testimonial-next {
+        order: 1;
+    }
+
+    .rightAlign-viewport {
+        order: 0;
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .rightAlign-track {
+        width: 100%;
+        overflow: visible;
+        gap: 24px;
+    }
+
+    .review-set {
+        display: contents;
+    }
+
+    .review-set.copy {
+        display: none;
+    }
+
+    .rightAlign .review {
+        flex: 0 0 calc((100% - 24px) / 2);
+        width: calc((100% - 24px) / 2);
+        max-width: calc((100% - 24px) / 2);
+    }
+}
+
+/* ================================================================
+   900px — tablets portrait
+================================================================ */
+@media (max-width: 900px) {
+
+    .stats-section .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .trusted-logo img {
+        filter: none;
+        opacity: 1;
+    }
+
+    /* HERO */
+    .hero-title {
+        font-size: clamp(26px, 6vw, 42px);
+    }
+
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .keyword-field,
+    .country-field {
+        flex: 1 1 auto;
+    }
+
+    .search-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-features {
+        gap: 14px 28px;
+    }
+
+    /* DISCOVER CARDS */
+    .columns {
+        grid-template-columns: 1fr;
+    }
+
+    .discover-section {
+        padding-top: 70px;
+    }
+
+    /* WHY DEFENCE TENDERS */
+    .why-defence-tenders {
+        padding-top: 70px;
+    }
+
+    .lower .card {
+        flex: 1 1 45%;
+    }
+
+    /* READY SECTION */
+    .ready {
+        padding-top: 70px;
+    }
+
+    .ready .ready-container {
+        padding: 0;
+        justify-content: flex-start;
+        text-align: left;
+        background-color: transparent;
+    }
+
+    .ready .ready-container .ready-left {
+        align-items: center;
+    }
+
+    .ready-left .ready-button {
+        justify-content: center;
+    }
+
+    .ready .ready-container .ready-right {
+        order: -1;
+    }
+
+    /* DEFENCE SECTION */
+    .defence-section {
+        padding-top: 70px;
+    }
+
+    /* MARKET SECTION */
+    .market-section {
+        padding-top: 70px;
+    }
+
+    .market-left h2 {
+        font-size: 32px;
+    }
+
+    .market-region-grid {
+       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .market-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ================================================================
+   700px — large phones
+================================================================ */
+@media (max-width: 700px) {
+
+    /* HERO */
+    .hero {
+        padding: 40px 0 80px;
+    }
+
+    .hero-eyebrow {
+        font-size: 11px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        padding-bottom: 28px;
+    }
+
+    .search-box {
+        padding: 20px 16px;
+        border-width: 3px;
+    }
+
+    .search-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .popular-categories,
+    .search-footer {
+        width: 100%;
+    }
+
+    .search-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .update-status{
+        display: none;
+    }
+
+    .search-header{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .update-statuss{
+        display: flex;
+    }
+
+    /* STATS */
+   .stats-section {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        position: relative;
+        top: auto;
+    }
+
+        .stats-container {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+
+    .stats-heading {
+        margin-bottom: 24px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .stat-item {
+        padding: 20px;
+        border: 1px solid #d8d8d8;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: #fff;
+    }
+
+    .stat-item > .material-symbols-outlined {
+        flex-shrink: 0;
+        font-size: 24px;
+    }
+
+    .stat-text h3 {
+        margin: 0 0 4px;
+    }
+
+    .stat-text p {
+        margin: 0;
+    }
+
+    /* DEFENCE SECTION */
+    .defence-section {
+        padding: 60px 0 0;
+    }
+
+    .defence-container {
+        width: min(100% - 40px, 1400px);
+        margin: 0 auto;
+    }
+
+    .defence-description {
+        font-size: 14px;
+    }
+
+    .trusted-logo {
+        padding: 12px 10px;
+    }
+
+    /* MARKET SECTION */
+    .market-tabs {
+        flex-wrap: wrap;
+    }
+
+    .market-tabs .tab {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .market-list {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 16px;
+    }
+
+    .market-item:nth-child(3n) {
+        border-right: 1px solid #eeeeee;
+    }
+
+    .market-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    .market-item:nth-last-child(-n + 4) {
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .market-item:nth-last-child(-n + 2) {
+        border-bottom: none;
+    }
+
+    .market-region-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .market-left h2 {
+        font-size: 28px;
+    }
+
+    .market-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* WHY DEFENCE TENDERS */
+    .lower .card {
+        flex: 1 1 100%;
+    }
+
+    /* READY SECTION */
+    .ready .ready-container .ready-left .ready-heading h1 {
+        font-size: 30px;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials .tes-container {
+        flex-direction: column;
+    }
+
+    .tes-container .rightAlign {
+        width: 100%;
+    }
+
+    .rightAlign span{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .left-align .heading h1 {
+        font-size: 30px;
+    }
+
+    /* FAQ */
+    .faq-section {
+        padding: 60px 0;
+    }
+
+    .faq-container {
+        width: min(100% - 40px, 1400px);
+    }
+
+    .faq-eyebrow {
+        font-size: 30px;
+    }
+
+    .faq-question {
+        font-size: 14px;
+        gap: 20px;
+        padding: 14px 16px;
+    }
+
+    .faq-description {
+        font-size: 14px;
+    }
+
+    /* DISCOVER HEADER */
+    .discover-header h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* ================================================================
+   500px — small phones
+================================================================ */
+@media (max-width: 500px) {
+
+    .hero-title {
+        font-size: 24px;
+    }
+
+    .input-wrapper,
+    .selected-option,
+    .search-btn {
+        height: 44px;
+    }
+
+    .hero-features {
+        display: none;
+    }
+
+    .popular-categories span{
+        width: 100% !important;
+    }
+    .advanced-search{
+        justify-content: right;
+        width: 100%;
+    }
+
+    .search-footer{
+        border: none;
+        padding-top: 0;
+    }
+
+    .update-status{
+        display: none;
+    }
+
+    .search-header{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .update-statuss{
+        display: flex;
+    }
+
+   .stats-section {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        position: relative;
+        top: auto;
+    }
+
+    .stats-container {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+
+    .stats-heading {
+        margin-bottom: 24px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .stat-item {
+        padding: 20px;
+        border: 1px solid #d8d8d8;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: #fff;
+    }
+
+    .stat-item > .material-symbols-outlined {
+        flex-shrink: 0;
+        font-size: 24px;
+    }
+
+    .stat-text h3 {
+        margin: 0 0 4px;
+    }
+
+    .stat-text p {
+        margin: 0;
+    }
+
+    .defence-title {
+        font-size: 24px;
+    }
+
+    .defence-points li {
+        font-size: 13px;
+        align-items: flex-start;
+    }
+
+    .column-panel {
+        padding: 16px;
+    }
+
+    .card-title {
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    .market-left h2 {
+        font-size: 24px;
+    }
+
+    .market-description {
+        font-size: 14px;
+    }
+
+    .market-region-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .market-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .market-item:nth-child(2n) {
+        border-right: none;
+    }
+
+    .market-item:nth-last-child(-n + 2) {
+        border-bottom: 1px solid rgba(216, 216, 216, 1);
+    }
+
+    .market-item:last-child {
+        border-bottom: none;
+    }
+
+
+    .ready .ready-container .ready-left .ready-heading h1 {
+        font-size: 24px;
+    }
+
+    .ready-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .upper .main-heading h2,
+    .left-align .heading h1 {
+        font-size: 24px;
+    }
+
+    .card .card-para p{
+        font-size: 14px;
+    }
+
+    .faq-eyebrow {
+        font-size: 24px;
+    }
+}
+
+
+/* ================================================================
+   400px — very small phones
+================================================================ */
+@media (max-width: 400px) {
+
+    .hero-content,
+    .hero .size {
+        padding: 0 4px;
+    }
+
+    .search-box {
+        padding: 16px 12px;
+    }
+
+    .popular-categories a {
+        font-size: 11px;
+        padding: 6px 9px;
+    }
+
+        .hero {
+        height: auto;
+        padding: 40px 0 40px 0;
+    }
+
+   .stats-section {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        position: relative;
+        top: auto;
+    }
+
+        .stats-container {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+
+    .stats-heading {
+        margin-bottom: 24px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .stat-item {
+        padding: 20px;
+        border: 1px solid #d8d8d8;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: #fff;
+    }
+
+    .stat-item > .material-symbols-outlined {
+        flex-shrink: 0;
+        font-size: 24px;
+    }
+
+    .stat-text h3 {
+        margin: 0 0 4px;
+    }
+
+    .stat-text p {
+        margin: 0;
+    }
+
+    .column-header h2 {
+        font-size: 18px;
+    }
+
+    .money .dollar p,
+    .money .date .price {
+        font-size: 12px;
+    }
+
+    .ready .ready-container {
+        padding: 24px 16px;
+    }
+
+    .lower .card {
+        padding: 18px;
+    }
+
+    .rightAlign .review {
+        padding: 18px;
+    }
+
+    .market-region-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .market-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================================================================
+    FEATURE OVERRIDES — RESPONSIVE ONLY (max-width: 768px)
+   1. Stats section — full width
+   2. How Defence Works — image removed, trusted logos = auto carousel
+   3. Discover section — only "Latest tenders" column shown
+   4. Ready to access — image removed
+   5. Why Defence Tenders — cards = auto carousel
+   6. Testimonials — auto carousel
+   These rules apply ONLY inside this media query, desktop is untouched.
+================================================================ */
+@media (max-width: 768px) {
+
+    .stats-section .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .trusted-logo img {
+        filter: none;
+        opacity: 1;
+    }
+
+    /* ---------- SAFETY: prevent nested flex/grid items from
+    growing wider than the viewport because of the nowrap
+    carousels inside them. This is the actual fix for the
+    "width badh gaya" issue. ---------- */
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .defence-content,
+    .trusted-section,
+    .defence-tender-container,
+    .tes-container {
+        min-width: 0;
+    }
+
+    .trusted-logos,
+    .lower,
+    .rightAlign {
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* ---------- 1. STATS SECTION — FULL WIDTH, BELOW HERO ---------- */
+    .hero {
+        height: auto;
+        padding: 40px 0 40px 0;
+    }
+
+
+    .stats-section {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
+        position: relative;
+        top: auto;
+        padding: 32px 0;
+    }
+
+        .stats-container {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+
+    .stats-heading {
+        margin-bottom: 24px;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .stat-item {
+        padding: 20px;
+        border: 1px solid #d8d8d8;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: #fff;
+    }
+
+    .stat-item > .material-symbols-outlined {
+        flex-shrink: 0;
+        font-size: 24px;
+    }
+
+    .stat-text h3 {
+        margin: 0 0 4px;
+        font-size: 20px;
+    }
+
+    .stat-text p {
+        margin: 0;
+        font-size: 14px;
+        width: 100%;
+    }
+
+
+
+    /* ---------- 2. HOW DEFENCE WORKS — REMOVE IMAGE ---------- */
+    .defence-visual {
+        display: none;
+    }
+
+    .defence-container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Trusted logos: infinite marquee, outer border stays visible */
+    .trusted-section {
+        overflow: hidden;
+        min-width: 0;
+    }
+
+    .trusted-logos {
+        position: relative;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid #d8d8d8;
+        box-shadow: inset 1px 0 0 #d8d8d8, inset -1px 0 0 #d8d8d8;
+    }
+
+    .trusted-logos .grid-line {
+        display: none;
+    }
+
+    .trusted-logos-track {
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+        /* gap: 8px; */
+        animation: scrollLogos 22s linear infinite;
+        will-change: transform;
+    }
+
+    .trusted-logos-set,
+    .trusted-logos-set.copy {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+    }
+
+    .trusted-logo {
+        flex: 0 0 120px;
+        width: 120px;
+        height: 64px;
+        border: none;
+        padding: 8px 0;
+    }
+
+    @keyframes scrollLogos {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+
+    /* ---------- 3. DISCOVER SECTION — ONLY LATEST TENDERS ---------- */
+    .columns {
+        grid-template-columns: 1fr;
+    }
+
+    .column-panel:nth-child(2),
+    .column-panel:nth-child(3) {
+        display: none;
+    }
+
+
+    /* ---------- 4. READY TO ACCESS — REMOVE IMAGE ---------- */
+    .ready-right {
+        display: none;
+    }
+
+    .ready .ready-container {
+        justify-content: center;
+    }
+
+    .ready .ready-container .ready-left {
+        max-width: 100%;
+    }
+
+
+    /* Why Defence Tenders — manual slider */
+    .defence-tender-container {
+        min-width: 0;
+    }
+
+    .lower {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        padding: 12px 0;
+        margin: 0;
+    }
+
+    .lower-track {
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+        gap: 20px;
+        will-change: transform;
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .lower-set,
+    .lower-set.copy {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        padding-right: 20px;
+    }
+
+    .lower .card {
+        flex: 0 0 260px;
+        width: 260px;
+        display: flex;
+    }
+
+    .why-controls {
+        display: flex;
+        justify-content: flex-start;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .why-controls .material-symbols-outlined {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid #d8d8d8;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+    }
+
+
+    /* Testimonials — manual slider */
+    .tes-container {
+        min-width: 0;
+    }
+
+    .rightAlign {
+        container-type: inline-size;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        overflow: visible;
+        padding: 8px 0 0;
+        gap: 16px;
+    }
+
+    .rightAlign-viewport {
+        width: 100%;
+        overflow: hidden;
+        order: 1;
+    }
+
+    .testimonial-nav {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        order: 2;
+        margin-top: 8px;
+        align-self: flex-start;
+    }
+
+    .rightAlign-track {
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content;
+        gap: 0;
+        will-change: transform;
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        transform: none;
+    }
+
+    #testimonial-prev,
+    #testimonial-next {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid #d8d8d8;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .rightAlign .review {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .review-set,
+    .review-set.copy {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        padding-right: 20px;
+    }
+
+    .rightAlign .review {
+        flex: 0 0 280px;
+        width: 280px;
+        max-width: 280px;
+        box-sizing: border-box;
+    }
+
+    @keyframes scrollReviews {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+}
