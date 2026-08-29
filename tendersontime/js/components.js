@@ -1,3 +1,6 @@
+const isNestedPage = window.location.pathname.includes('/pages/');
+const componentBasePath = isNestedPage ? '../' : './';
+
 async function loadComponent(elementId, componentPath) {
   const element = document.getElementById(elementId);
   if (!element) return;
@@ -14,24 +17,7 @@ async function loadComponent(elementId, componentPath) {
 }
 
 // Load Footer
-loadComponent("footer", "./components/footer.html");
-
-
-// Nabar
-async function loadComponent(elementId, componentPath) {
-  const element = document.getElementById(elementId);
-  if (!element) return;
-  try {
-    const response = await fetch(componentPath);
-    if (!response.ok) {
-      throw new Error(`Failed to load ${componentPath}`);
-    }
-    const html = await response.text();
-    element.innerHTML = html;
-  } catch (error) {
-    console.error(error);
-  }
-}
+loadComponent("footer", `${componentBasePath}components/footer.html`);
 
 // Load Navbar
 // Initialize navbar interactivity (safe, no-op if elements missing)
@@ -92,6 +78,6 @@ function initNavbar() {
   });
 }
 
-loadComponent("navbar", "./components/navbar.html").then(() => {
+loadComponent("navbar", `${componentBasePath}components/navbar.html`).then(() => {
   try { initNavbar(); } catch (e) { console.error(e); }
 });

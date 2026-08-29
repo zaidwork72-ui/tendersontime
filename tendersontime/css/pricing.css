@@ -1,0 +1,1069 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --accent: #B9953D;
+    --primary-text: #051728;
+    --light-text: #818181;
+    --white: #FFFFFF;
+    --body-text: #434445;
+    --primary-body: #D8D8D8;
+    --primary-bg: #E5F2FF;
+    --icon-primary: #757779;
+    --gold: #F5A623;
+    --gold-border: #FFCC77;
+    --bg-gold: #FFF8E6;
+}
+
+.material-symbols-outlined {
+    font-size: 20px;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    vertical-align: middle;
+    user-select: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Allows all rem-based sizing (if added later) to scale smoothly */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero {
+    height: auto;
+    background-image: url("../assets/Thin.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-container {
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+    color: var(--white);
+    padding: 41px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hero-container .hero-heading h2 {
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.hero-container .hero-heading p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* =========================================
+   NAVIGATION (BREADCRUMB)
+========================================= */
+.navigation {
+    height: auto;
+    width: auto;
+}
+
+.navigation-container {
+    display: flex;
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 16px 0 16px 0;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navigation-container .home {
+    color: #697077;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.navigation-container span {
+    color: #697077;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.navigation-container .by-region {
+    color: #697077;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+/* =========================================
+   FIND SECTION
+========================================= */
+.find {
+    height: auto;
+    width: auto;
+}
+
+.find-container {
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 32px 0 48px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.find-heading h2 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--primary-text);
+}
+
+.find-para p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--body-text);
+}
+
+/* =========================================
+   PRICING
+========================================= */
+.pricing {
+    height: auto;
+    width: auto;
+    background-color: var(--primary-text);
+}
+
+.pricing .pricing-container {
+    display: flex;
+    flex-direction: column;
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 56px 0;
+    gap: 40px;
+}
+
+.pricing-container .top-offer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-offer .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 8px 16px;
+    border: 1px solid #0F2D4A;
+    border-radius: 999px;
+    gap: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+}
+
+.top .month {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}
+
+.top .annual-billing {
+    color: #B9953D;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}
+
+.top .save {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 8px;
+    background-color: rgba(46, 58, 36, 1);
+    border: 1px solid rgba(70, 98, 43, 1);
+    border-radius: 4px;
+}
+
+.top .save .save-under {
+    color: rgba(107, 224, 46, 1);
+    font-size: 10px;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cards: flex-wrap so tablet gets 2-up, mobile gets 1-up automatically */
+.pricing-container .main-pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+}
+
+.main-pricing .plan-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    background-color: rgba(28, 54, 87, 1);
+    border: 1px solid rgba(15, 45, 74, 1);
+    border-radius: 16px;
+    gap: 24px;
+    height: fit-content;
+    width: 360px;
+    max-width: 100%;
+    flex: 1 1 320px;
+    position: relative;
+}
+
+.plan-card .top-plan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.top-plan h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.5;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-plan p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--white);
+}
+
+.plan-card .main-plan {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+}
+
+.main-plan h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+}
+
+.main-plan p {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    align-items: flex-end;
+}
+
+.plan-card .main-bottom-divider {
+    border: 1px solid rgba(15, 45, 74, 1);
+}
+
+.plan-card .bottom-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.bottom-feature ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-feature ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.bottom-feature ul li a {
+    display: flex;
+    gap: 8px;
+    color: var(--white);
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+}
+
+.bottom-feature ul li a span {
+    color: rgba(185, 149, 61, 1);
+}
+
+.bottom-feature .btn-feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-feature button {
+    padding: 12px 20px 12px 24px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent);
+    border-radius: 999px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-feature button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.main-pricing .plan-card.premium {
+    border: 2px solid rgba(185, 149, 61, 1);
+    box-shadow: 0 24px 12px 0 rgba(0, 0, 0, 0.25);
+}
+
+.main-pricing .plan-card.premium .main-plan p {
+    color: var(--accent);
+}
+
+.premium .recommended {
+    position: absolute;
+    top: -13px;
+    right: 18px;
+    padding: 4px 12px;
+    background-color: #B9953D;
+    color: var(--white);
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    z-index: 2;
+}
+
+/* =========================================
+   COMPARISON TABLE
+========================================= */
+.dtc-compare {
+    height: auto;
+    width: auto;
+    background-color: var(--white);
+    padding: 56px 0;
+}
+
+.dtc-container {
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.dtc-heading-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 640px;
+}
+
+.dtc-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--accent);
+    line-height: 100%;
+}
+
+.dtc-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 44px;
+    color: var(--primary-text);
+}
+
+.dtc-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    justify-content: center;
+    color: var(--body-text);
+}
+
+/* Wrapper enables horizontal scroll on small screens without breaking layout */
+.dtc-table-card {
+    background-color: var(--white);
+    border: 1px solid rgba(214, 222, 232, 1);
+    border-radius: 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.dtc-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+}
+
+.dtc-table thead tr {
+    background-color: rgba(5, 23, 40, 1);
+}
+
+.dtc-table thead th {
+    text-align: left;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    white-space: nowrap;
+}
+
+.dtc-table thead th:not(:first-child) {
+    text-align: left;
+    width: 180px;
+}
+
+.dtc-th-highlight {
+    color: rgba(185, 149, 61, 1) !important;
+}
+
+.dtc-group-row {
+    background-color: rgba(234, 239, 243, 1);
+}
+
+.dtc-group-row td {
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-text);
+}
+
+.dtc-data-row {
+    padding: 16px;
+    border-bottom: 1px solid rgba(214, 222, 232, 1);
+}
+
+.dtc-data-row:last-child {
+    border-bottom: none;
+}
+
+.dtc-data-row td {
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--body-text);
+}
+
+.dtc-data-row td:not(:first-child) {
+    text-align: left;
+}
+
+.dtc-muted-val {
+    color: rgba(0, 0, 0, 0.35);
+}
+
+.dtc-dash {
+    color: rgba(0, 0, 0, 0.35);
+}
+
+.dtc-check {
+    color: rgba(0, 162, 81, 1);
+    font-size: 20px;
+}
+
+/* =========================================
+   GLOBAL PROCUREMENT MONITOR TABLE
+========================================= */
+.gpm-section {
+    height: auto;
+    width: auto;
+    background-color: var(--white);
+}
+
+.gpm-container {
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 56px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.gpm-heading-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.gpm-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.gpm-title {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    color: var(--primary-text);
+}
+
+.gpm-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--body-text);
+}
+
+.gpm-table-card {
+    border: 1px solid rgba(229, 231, 235, 1);
+    border-radius: 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.gpm-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+
+.gpm-table thead tr {
+    background-color: #F7F8FA;
+}
+
+.gpm-table thead th {
+    text-align: left;
+    padding: 14px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--body-text);
+    border-bottom: 1px solid #E5E7EB;
+    white-space: nowrap;
+}
+
+.gpm-row td {
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--body-text);
+    border-bottom: 1px solid rgba(229, 231, 235, 1);
+    vertical-align: middle;
+}
+
+.gpm-row:last-child td {
+    border-bottom: none;
+}
+
+.gpm-flag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #F0F1F3;
+    font-size: 13px;
+}
+
+.gpm-tender-title {
+    font-weight: 500;
+    color: var(--primary-text);
+}
+
+.gpm-org {
+    color: var(--light-text);
+}
+
+.gpm-date,
+.gpm-value {
+    color: var(--light-text);
+    white-space: nowrap;
+}
+
+/* =========================================
+   TRUST / STATS SECTION
+========================================= */
+.ist-section {
+    height: auto;
+    width: auto;
+}
+
+.ist-container {
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 56px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.ist-heading-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ist-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.ist-title {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--primary-text);
+}
+
+.ist-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--body-text);
+}
+
+.ist-stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.ist-stat-card {
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    border: 1px solid rgba(214, 222, 232, 1);
+}
+
+.ist-stat-value {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.ist-stat-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--body-text);
+}
+
+/* =========================================
+   FAQ
+========================================= */
+.faq-pricing {
+    width: auto;
+    height: auto;
+}
+
+.faq-pricing .faq-pricing-container {
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 56px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.faq-pricing-container .up-faq {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.up-faq .faq-eyebro {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.up-faq .faq-title {
+    color: var(--primary-text);
+    font-size: 40px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.up-faq .faq-subtitle {
+    display: flex;
+    align-items: center;
+    color: var(--body-text);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.faq-pricing-container .down-faq {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 32px;
+    row-gap: 24px;
+}
+
+.down-faq .faq-card {
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-card .faq-question {
+    color: var(--primary-text);
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.faq-card .faq-answer {
+    display: flex;
+    align-items: center;
+    color: var(--body-text);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   Breakpoints: 1200px (small laptop), 992px (tablet landscape),
+   768px (tablet portrait), 576px (mobile), 400px (small mobile)
+============================================================ */
+
+/* ---------- LAPTOP / SMALL DESKTOP (<=1200px) ---------- */
+@media (max-width: 1200px) {
+    .hero-container .hero-heading h2 {
+        font-size: 46px;
+    }
+
+    .find-heading h2 {
+        font-size: 34px;
+    }
+
+    .main-pricing .plan-card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .gpm-title,
+    .dtc-title {
+        font-size: 30px;
+        line-height: 1.35;
+    }
+}
+
+/* ---------- TABLET LANDSCAPE (<=992px) ---------- */
+@media (max-width: 992px) {
+    .hero-container {
+        padding: 32px 0 32px 0;
+    }
+
+    .hero-container .hero-heading h2 {
+        font-size: 38px;
+    }
+
+    .find-heading h2 {
+        font-size: 30px;
+    }
+
+    /* pricing cards: 2-up wrap, centered */
+    .pricing-container .main-pricing {
+        gap: 24px;
+    }
+
+    .main-pricing .plan-card {
+        flex: 1 1 45%;
+        max-width: 400px;
+    }
+
+    .ist-title {
+        font-size: 32px;
+    }
+
+    .ist-stats-row {
+        gap: 20px;
+    }
+
+    .gpm-title,
+    .dtc-title {
+        font-size: 28px;
+    }
+
+    .faq-title {
+        font-size: 32px !important;
+    }
+}
+
+/* ---------- TABLET PORTRAIT (<=768px) ---------- */
+@media (max-width: 768px) {
+    .hero-container .hero-heading h2 {
+        font-size: 32px;
+        line-height: 130%;
+    }
+
+    .hero-container .hero-heading p,
+    .find-para p {
+        font-size: 14px;
+    }
+
+    .navigation-container {
+        padding: 12px 0;
+    }
+
+    .find-container {
+        padding: 24px 0 32px 0;
+    }
+
+    .find-heading h2 {
+        font-size: 26px;
+    }
+
+    .pricing .pricing-container {
+        padding: 40px 0;
+        gap: 28px;
+    }
+
+    /* stack pricing cards fully on tablet portrait & below */
+    .pricing-container .main-pricing {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-pricing .plan-card {
+        width: 100%;
+        max-width: 420px;
+        flex: none;
+    }
+
+    .dtc-compare,
+    .gpm-section,
+    .ist-section,
+    .faq-pricing .faq-pricing-container {
+        padding: 40px 0;
+    }
+
+    .dtc-title,
+    .gpm-title {
+        font-size: 26px;
+        line-height: 1.4;
+    }
+
+    .ist-title,
+    .up-faq .faq-title {
+        font-size: 28px;
+    }
+
+    /* trust stats: 2 columns on tablet */
+    .ist-stats-row {
+        flex-wrap: wrap;
+    }
+
+    .ist-stat-card {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    /* FAQ: single column on tablet portrait */
+    .faq-pricing-container .down-faq {
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+    }
+}
+
+/* ---------- MOBILE (<=576px) ---------- */
+@media (max-width: 576px) {
+    .hero-container .hero-heading h2 {
+        font-size: 26px;
+    }
+
+    .navigation-container {
+        flex-wrap: wrap;
+        row-gap: 4px;
+    }
+
+    .navigation-container .home,
+    .navigation-container .by-region,
+    .navigation-container span {
+        font-size: 12px;
+    }
+
+    .find-heading h2 {
+        font-size: 22px;
+    }
+
+    .find-para p {
+        font-size: 13px;
+    }
+
+    .pricing .pricing-container {
+        padding: 32px 0;
+        gap: 20px;
+    }
+
+    .top-offer .top {
+        gap: 8px;
+        padding: 6px 10px;
+    }
+
+    .top .month,
+    .top .annual-billing {
+        font-size: 12px;
+    }
+
+    .main-pricing .plan-card {
+        padding: 24px 20px;
+        gap: 18px;
+    }
+
+    .main-plan h2 {
+        font-size: 32px;
+    }
+
+    .premium .recommended {
+        right: 12px;
+        top: -12px;
+        font-size: 10px;
+        padding: 3px 10px;
+    }
+
+    .dtc-heading-block,
+    .gpm-heading-block,
+    .ist-heading-block,
+    .up-faq {
+        gap: 6px;
+    }
+
+    .dtc-title,
+    .gpm-title {
+        font-size: 22px;
+    }
+
+    .dtc-subtitle,
+    .gpm-subtitle,
+    .ist-subtitle,
+    .up-faq .faq-subtitle {
+        font-size: 14px;
+    }
+
+    .dtc-table thead th,
+    .dtc-data-row td,
+    .dtc-group-row td {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .gpm-table thead th,
+    .gpm-row td {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    /* trust stats: stack fully on small mobile */
+    .ist-stat-card {
+        flex: 1 1 100%;
+    }
+
+    .ist-stat-value {
+        font-size: 32px;
+    }
+
+    .ist-title,
+    .up-faq .faq-title {
+        font-size: 24px;
+    }
+
+    .faq-card .faq-question {
+        font-size: 16px;
+    }
+
+    .faq-card .faq-answer {
+        font-size: 13px;
+    }
+}
+
+/* ---------- SMALL MOBILE (<=400px) ---------- */
+@media (max-width: 400px) {
+    .hero-container .hero-heading h2 {
+        font-size: 22px;
+    }
+
+    .find-heading h2 {
+        font-size: 20px;
+    }
+
+    .main-plan h2 {
+        font-size: 28px;
+    }
+
+    .btn-feature button a {
+        font-size: 14px;
+    }
+
+    .bottom-feature ul li a {
+        font-size: 13px;
+    }
+
+    .ist-stat-value {
+        font-size: 28px;
+    }
+
+    .dtc-title,
+    .gpm-title {
+        font-size: 20px;
+    }
+}
