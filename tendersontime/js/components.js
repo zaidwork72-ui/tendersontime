@@ -1,26 +1,54 @@
-const isNestedPage = window.location.pathname.includes('/pages/');
-const componentBasePath = isNestedPage ? '../' : './';
+function resolveComponentPath(componentPath) {
+  if (!componentPath) return componentPath;
+  if (/^(?:[a-z]+:)?\/\//i.test(componentPath) || componentPath.startsWith('/')) {
+    return componentPath;
+  }
+
+  const currentScript = document.currentScript || Array.from(document.querySelectorAll('script')).find(script => script.src.includes('/js/components.js'));
+
+  if (currentScript && currentScript.src) {
+    return new URL(componentPath, currentScript.src).href;
+  }
+
+  return new URL(componentPath, window.location.href).href;
+}
 
 async function loadComponent(elementId, componentPath) {
   const element = document.getElementById(elementId);
-  if (!element) return;
+  if (!element) return false;
+
+  const resolvedPath = resolveComponentPath(componentPath);
+
   try {
-    const response = await fetch(componentPath);
+    const response = await fetch(resolvedPath);
     if (!response.ok) {
-      throw new Error(`Failed to load ${componentPath}`);
+      throw new Error(`Failed to load ${resolvedPath}`);
     }
+
     const html = await response.text();
     element.innerHTML = html;
+
+    if (elementId === 'navbar') {
+      const pricingLink = document.querySelector('#navbar a[href*="pricing"], #navbar a[href*="Pricing"]');
+      if (pricingLink) {
+        const targetHref = window.location.pathname.includes('/pages/') ? './pricing.html' : 'pages/pricing.html';
+        pricingLink.setAttribute('href', targetHref);
+      }
+    }
+
+    return true;
   } catch (error) {
     console.error(error);
+    return false;
   }
 }
 
+window.loadComponent = loadComponent;
+
 // Load Footer
-loadComponent("footer", `${componentBasePath}components/footer.html`);
+loadComponent('footer', '../components/footer.html');
 
 // Load Navbar
-// Initialize navbar interactivity (safe, no-op if elements missing)
 function initNavbar() {
   const menuToggle = document.querySelector('#navbar .menu-toggle');
   const navigation = document.querySelector('#navbar .navigation');
@@ -31,11 +59,9 @@ function initNavbar() {
     navigation.classList.toggle('active');
     menuToggle.setAttribute('aria-expanded', String(willBeActive));
 
-    // swap icon text to 'cancel' when active, 'menu' when closed
     const iconSpan = menuToggle.querySelector('.material-symbols-outlined');
     if (iconSpan) iconSpan.textContent = willBeActive ? 'cancel' : 'menu';
 
-    // lock body scroll when nav is active
     if (willBeActive) {
       document.body.classList.add('nav-open');
     } else {
@@ -78,6 +104,10 @@ function initNavbar() {
   });
 }
 
-loadComponent("navbar", `${componentBasePath}components/navbar.html`).then(() => {
-  try { initNavbar(); } catch (e) { console.error(e); }
+loadComponent('navbar', '../components/navbar.html').then(() => {
+  try {
+    initNavbar();
+  } catch (e) {
+    console.error(e);
+  }
 });
