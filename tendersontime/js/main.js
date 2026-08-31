@@ -161,3 +161,68 @@ document.addEventListener("DOMContentLoaded", () => {
         getVisibleItems: () => (window.innerWidth <= 768 ? 1 : 2)
     });
 });
+
+
+
+
+
+
+
+// latest-tenders-dropdown2 
+// dropdown-filters.js
+document.querySelectorAll('[data-dropdown]').forEach(function (dropdown) {
+    const toggle = dropdown.querySelector('.df-toggle');
+    const label = dropdown.querySelector('.df-toggle-label');
+    const menu = dropdown.querySelector('.df-menu');
+    const options = dropdown.querySelectorAll('.df-option');
+    const hiddenInput = dropdown.querySelector('.df-value');
+
+    function closeDropdown() {
+        dropdown.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    function openDropdown() {
+        // close any other open dropdowns first
+        document.querySelectorAll('[data-dropdown].is-open').forEach(function (open) {
+            if (open !== dropdown) {
+                open.classList.remove('is-open');
+                open.querySelector('.df-toggle').setAttribute('aria-expanded', 'false');
+            }
+        });
+        dropdown.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (dropdown.classList.contains('is-open')) {
+            closeDropdown();
+        } else {
+            openDropdown();
+        }
+    });
+
+    options.forEach(function (option) {
+        option.addEventListener('click', function () {
+            options.forEach(function (o) { o.classList.remove('is-active'); });
+            option.classList.add('is-active');
+            label.textContent = option.textContent.trim();
+            if (hiddenInput) hiddenInput.value = option.getAttribute('data-value');
+            dropdown.classList.remove('has-error');
+            closeDropdown();
+        });
+    });
+
+    // close when clicking outside
+    document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+            closeDropdown();
+        }
+    });
+
+    // close on escape
+    dropdown.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeDropdown();
+    });
+});
