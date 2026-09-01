@@ -1974,7 +1974,7 @@ img {
 }
 
 .region-card {
-    background: rgba(255, 255, 255, 0.96);
+    background: var(--white);
     border-radius: 8px;
     padding: 12px;
     display: flex;
@@ -1990,7 +1990,7 @@ img {
 .region-card-img {
     width: 100%;
     aspect-ratio: 4 / 3;
-    background: #E8F1FC;
+    background: var(--primary-bg);
     border-radius: 6px;
     overflow: hidden;
     display: flex;
@@ -2000,8 +2000,8 @@ img {
 }
 
 .region-card-img img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: contain;
 }
 
@@ -2009,7 +2009,7 @@ img {
     margin: 0 0 4px;
     font-size: 16px;
     font-weight: 600;
-    color: #16181c;
+    color: var(--primary-text);
 }
 
 .region-card-footer {
@@ -2021,7 +2021,7 @@ img {
 
 .region-card-footer span:first-child {
     font-size: 13px;
-    color: rgba(82, 85, 89, 1);
+    color: #525559;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -2285,7 +2285,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6px 12px;
+    padding: 7px 12px 6px 12px;
     background-color: #E6F6EC;
     border-radius: 6px;
     border: 1px solid #7AD2A6;
@@ -2315,7 +2315,7 @@ img {
     background-color: var(--primary-bg);
     justify-content: center;
     align-items: center;
-    border-radius: 2px;
+    border-radius: 4px;
     flex-shrink: 0;
 }
 
@@ -2353,9 +2353,18 @@ img {
 }
 
 .ref-row {
-    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 14px;
+    font-weight: 400;
     color: var(--light-text);
     margin-bottom: 8px;
+}
+
+.ref-row .separator {
+    color: rgba(216, 216, 216, 1)
 }
 
 .desc {
@@ -2386,17 +2395,12 @@ img {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 8px;
 }
-
-/* =========================
-   AMOUNT
-========================= */
 
 .money .dollar {
     display: flex;
     align-items: center;
-    gap: 5px;
 }
 
 .money .dollar .material-icons {
@@ -2420,7 +2424,7 @@ img {
 .money .space {
     width: 1px;
     height: 16px;
-    background: var(--light-text);
+    background: rgba(220, 220, 220, 1);
     flex-shrink: 0;
 }
 
