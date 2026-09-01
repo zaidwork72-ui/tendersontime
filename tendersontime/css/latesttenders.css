@@ -36,7 +36,6 @@
 }
 
 html {
-    /* Allows all rem-based sizing (if added later) to scale smoothly */
     -webkit-text-size-adjust: 100%;
 }
 
@@ -146,6 +145,7 @@ body {
     -webkit-tap-highlight-color: transparent;
     gap: 24px;
 }
+
 .container-up .container-header-row {
     display: flex;
     align-items: center;
@@ -455,29 +455,17 @@ body {
 }
 
 /* =========================================
-   CONTAINER DOWN — split into columns (left) + down-right (right)
+   CONTAINER DOWN — 12-column grid: columns = 8, down-right = 4
 ========================================= */
 .main-container .container-down {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     gap: 24px;
     align-items: flex-start;
 }
 
 .columns {
-    display: flex;
-    gap: 20px;
-    flex: 0 0 calc(70% - 12px);
-    min-width: 0;
-}
-
-/* column-stack holds the tenders panel + pagination, stacked vertically,
-   so pagination stays inside .columns instead of sitting beside down-right */
-.column-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    /* allow column stack to be slightly narrower without a fixed width */
-    flex: 1 1 65%;
+    grid-column: span 8;
     min-width: 0;
 }
 
@@ -486,13 +474,15 @@ body {
     border-radius: 16px;
     padding: 24px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .column-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
     padding: 0 4px;
     flex-wrap: wrap;
     gap: 12px;
@@ -529,7 +519,6 @@ body {
     background: var(--white);
     border-radius: 8px;
     padding: 16px;
-    margin-bottom: 24px;
     position: relative;
     border: 1px solid rgba(209, 232, 255, 1);
     cursor: pointer;
@@ -543,10 +532,6 @@ body {
 
 .column-panel .card:hover .card-bottom>.material-symbols-outlined {
     color: var(--primary-text);
-}
-
-.column-panel .card:last-child {
-    margin-bottom: 0;
 }
 
 .card-top {
@@ -582,7 +567,6 @@ body {
 }
 
 .try .top-tag {
-    /* margin: auto; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -594,7 +578,6 @@ body {
 }
 
 .try-free .top-tag {
-    /* margin: auto; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -631,7 +614,6 @@ body {
     border-radius: 2px;
     flex-shrink: 0;
 }
-
 
 .favourite span {
     margin: 0;
@@ -781,8 +763,8 @@ body {
    DOWN RIGHT (sidebar next to columns)
 ========================================= */
 .down-right {
-    width: 280px;
-    flex-shrink: 0;
+    grid-column: span 4;
+    min-width: 0;
 }
 
 /* dropdown-filters */
@@ -1007,10 +989,6 @@ body {
     letter-spacing: 1px;
 }
 
-.down-right {
-    flex: 0 0 calc(30% - 12px);
-}
-
 /* reco-panel */
 .reco-panel {
     display: flex;
@@ -1151,102 +1129,119 @@ body {
     flex-shrink: 0;
 }
 
-/* CTA card */
-.reco-cta {
+/* CTA card (premium upsell inside reco-panel) */
+.upper-region {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-    background: linear-gradient(160deg, #0B2A4A 0%, var(--primary-text) 100%);
-    border-radius: 16px;
     overflow: hidden;
-}
-
-.reco-cta-icon {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    width: 90px;
-    height: 90px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.08;
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+    border-radius: 16px;
+    background-color: rgba(28, 54, 87, 1);
 }
 
-.reco-cta-icon .material-symbols-outlined {
-    font-size: 90px;
-    color: var(--white);
-}
-
-.reco-cta-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--white);
-    line-height: 130%;
-    position: relative;
-    z-index: 1;
-}
-
-.reco-cta-desc {
-    font-size: 12px;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.75);
-    line-height: 150%;
-    position: relative;
-    z-index: 1;
-}
-
-.reco-cta-list {
+.upper-region .heading-region {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    list-style: none;
-    position: relative;
-    z-index: 1;
 }
 
-.reco-cta-list li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-weight: 400;
+.heading-region h2 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 120%;
     color: var(--white);
-}
-
-.reco-cta-list .material-symbols-outlined {
-    font-size: 16px;
-    color: #4ADE80;
-    flex-shrink: 0;
-}
-
-.reco-cta-btn {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.heading-region p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.upper-region .points-region {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+}
+
+.points-region .main-point {
+    display: flex;
+    gap: 8px;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    padding: 12px 16px;
-    background: var(--accent);
-    border: none;
-    border-radius: 25px;
-    color: var(--white);
-    font-family: inherit;
+}
+
+.main-point span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
+    line-height: 130%;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.main-point span:first-child {
+    color: var(--accent);
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.upper-region .btn-region button {
+    padding: 12px 20px 12px 24px;
+    border-radius: 999px;
+    background-color: var(--accent);
+    border: none;
     cursor: pointer;
-    position: relative;
-    z-index: 1;
-    transition: 0.2s ease;
 }
 
-.reco-cta-btn:hover {
-    background: #a5822f;
+.btn-region button a {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
 }
 
-.reco-cta-btn .material-symbols-outlined {
-    font-size: 18px;
+.btn-region button a span {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.btn-region button a span:last-child {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upper-region .region-bg-icon {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 160px;
+    color: var(--white);
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
 }
 
 /* search-keywords-section */
@@ -1432,7 +1427,8 @@ body {
     padding: 16px;
     border: 1px solid rgba(209, 232, 255, 1);
     border-radius: 8px;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
 }
 
 /* last-para-section */
@@ -1468,4 +1464,77 @@ body {
     font-weight: 400;
     line-height: 130%;
     color: var(--body-text);
+}
+
+
+.added-search{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 24px;
+    gap: 16px;
+    border: 1px solid rgba(216, 216, 216, 1);
+    border-radius: 12px;
+    background-color: var(--white);
+}
+
+.added-search .added-left{
+    display: flex;
+}
+
+.added-left ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.added-left ul li{
+    list-style: none;
+    gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.added-left ul li a{
+    padding: 6px 12px;
+    border: 1px solid rgba(214, 222, 232, 1);
+    border-radius: 6px;
+    color: var(--light-text);
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.added-left ul li a span{
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.added-search .added-right{
+    display: flex;
+    gap: 12px;
+}
+
+.added-right button{
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+}
+
+.added-right button a{
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
 }
