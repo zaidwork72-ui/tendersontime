@@ -42,21 +42,150 @@
 
         <section class="main-content">
             <div class="main-container">
-                <div class="container-up">
-                    <div class="container-left">
-                        <span class="material-symbols-outlined">
-                            filter_list
-                        </span>
-                        <h2>
-                            Filter tenders
-                        </h2>
+
+                <div class="container-up" id="filterToggle" aria-expanded="true">
+
+                    <div class="container-header-row" role="button" tabindex="0">
+                        <div class="container-left">
+                            <span class="material-symbols-outlined">
+                                filter_list
+                            </span>
+                            <h2>
+                                Filter tenders
+                            </h2>
+                        </div>
+                        <div class="container-right">
+                            <span class="material-symbols-outlined">
+                                keyboard_arrow_down
+                            </span>
+                        </div>
                     </div>
-                    <div class="container-right">
-                        <span class="material-symbols-outlined">
-                            keyboard_arrow_down
-                        </span>
+
+                    <div class="filter-wrapper is-open" id="filterWrapper">
+                        <div class="filter-inner">
+                            <div class="filter-body">
+
+                                <div class="filter-field">
+                                    <span class="material-symbols-outlined">search</span>
+                                    <input type="text" placeholder="Enter keywords. E.G radar, drone, surveillance">
+                                </div>
+
+                                <div class="filter-row filter-row-3">
+
+                                    <div class="df-dropdown" data-dropdown>
+                                        <button type="button" class="df-toggle" aria-haspopup="listbox"
+                                            aria-expanded="false">
+                                            <span class="df-toggle-label is-placeholder">Select country/region</span>
+                                            <span class="material-symbols-outlined df-chevron">
+                                                keyboard_arrow_down
+                                            </span>
+                                        </button>
+                                        <ul class="df-menu" role="listbox">
+                                            <li class="df-option" data-value="india" role="option">India</li>
+                                            <li class="df-option" data-value="uk" role="option">United Kingdom</li>
+                                            <li class="df-option" data-value="us" role="option">United States</li>
+                                            <li class="df-option" data-value="germany" role="option">Germany</li>
+                                        </ul>
+                                        <input type="hidden" class="df-value" name="country" value="">
+                                        <span class="df-error-message">This is error</span>
+                                    </div>
+
+                                    <div class="filter-field">
+                                        <input type="text" placeholder="Purchaser name">
+                                    </div>
+
+                                    <div class="df-dropdown" data-dropdown>
+                                        <button type="button" class="df-toggle" aria-haspopup="listbox"
+                                            aria-expanded="false">
+                                            <span class="df-toggle-label is-placeholder">Status</span>
+                                            <span class="material-symbols-outlined df-chevron">
+                                                keyboard_arrow_down
+                                            </span>
+                                        </button>
+                                        <ul class="df-menu" role="listbox">
+                                            <li class="df-option" data-value="open" role="option">Open</li>
+                                            <li class="df-option" data-value="closed" role="option">Closed</li>
+                                            <li class="df-option" data-value="awarded" role="option">Awarded</li>
+                                        </ul>
+                                        <input type="hidden" class="df-value" name="status_filter" value="">
+                                        <span class="df-error-message">This is error</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="filter-row filter-row-3">
+                                    <div class="filter-group">
+                                        <span class="filter-group-label">Posting date</span>
+                                        <div class="filter-range">
+                                            <div class="filter-range-part">
+                                                <input type="text" placeholder="From">
+                                                <span class="material-symbols-outlined">calendar_today</span>
+                                            </div>
+                                            <span
+                                                class="material-symbols-outlined filter-range-arrow">arrow_forward</span>
+                                            <div class="filter-range-part">
+                                                <input type="text" placeholder="To">
+                                                <span class="material-symbols-outlined">calendar_today</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-group">
+                                        <span class="filter-group-label">Closing date</span>
+                                        <div class="filter-range">
+                                            <div class="filter-range-part">
+                                                <input type="text" placeholder="From">
+                                                <span class="material-symbols-outlined">calendar_today</span>
+                                            </div>
+                                            <span
+                                                class="material-symbols-outlined filter-range-arrow">arrow_forward</span>
+                                            <div class="filter-range-part">
+                                                <input type="text" placeholder="To">
+                                                <span class="material-symbols-outlined">calendar_today</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-group">
+                                        <span class="filter-group-label">Estimated cost</span>
+                                        <div class="filter-cost">
+                                            <select>
+                                                <option>More than</option>
+                                                <option>Less than</option>
+                                                <option>Equal to</option>
+                                            </select>
+                                            <div class="filter-cost-divider"></div>
+                                            <input type="text" placeholder="Enter value">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-row filter-row-3">
+                                    <div class="filter-field">
+                                        <input type="text" placeholder="Dt ref. No.">
+                                    </div>
+
+                                    <div class="filter-field">
+                                        <input type="text" placeholder="Doc ref. No.">
+                                    </div>
+
+                                    <div class="filter-checkbox">
+                                        <input type="checkbox" id="exactKeywords">
+                                        <label for="exactKeywords">Search with exact keywords</label>
+                                    </div>
+                                </div>
+
+                                <div class="filter-actions">
+                                    <button type="button" class="filter-reset">Reset</button>
+                                    <button type="button" class="filter-search">Search</button>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
+
                 </div>
+
                 <div class="container-down">
                     <div class="columns">
 
@@ -930,7 +1059,7 @@
                         </div>
                     </div>
 
-                                        <div class="card card-down">
+                    <div class="card card-down">
                         <div class="title-row">
                             <span class="flag">🇬🇧</span>
                             <span class="card-title">UK ministry of defence combat vehicl...</span>
@@ -964,7 +1093,7 @@
                         </div>
                     </div>
 
-                                        <div class="card card-down">
+                    <div class="card card-down">
                         <div class="title-row">
                             <span class="flag">🇬🇧</span>
                             <span class="card-title">UK ministry of defence combat vehicl...</span>
@@ -1010,7 +1139,9 @@
                     </h2>
                 </div>
                 <div class="last-sub-heading">
-                    <p>Defence spending is the major component of public procurement. The information on mod tenders, dod tenders and all 3 wings of defence like air, navy <br> and army; are sourced from various sources like: newspapers, eprocurement defence tenders portal and defence journals etc</p>
+                    <p>Defence spending is the major component of public procurement. The information on mod tenders,
+                        dod tenders and all 3 wings of defence like air, navy <br> and army; are sourced from various
+                        sources like: newspapers, eprocurement defence tenders portal and defence journals etc</p>
                 </div>
             </div>
         </section>
@@ -1018,7 +1149,6 @@
     <div id="footer"></div>
     <script src="../../js/components.js"></script>
     <script src="../../js/main.js"></script>
-    <script src="../../js/dropdown-filters.js"></script>
 </body>
 
 </html>

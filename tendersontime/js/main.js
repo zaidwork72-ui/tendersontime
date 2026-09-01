@@ -226,3 +226,30 @@ document.querySelectorAll('[data-dropdown]').forEach(function (dropdown) {
         if (e.key === 'Escape') closeDropdown();
     });
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('filterToggle');
+    const wrapper = document.getElementById('filterWrapper');
+    const header = toggle?.querySelector('.container-header-row');
+
+    if (!toggle || !wrapper || !header) return;
+
+    function toggleFilter() {
+        const isOpen = wrapper.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    // ONLY header par click hone se toggle hoga
+    header.addEventListener('click', toggleFilter);
+
+    // Keyboard support: Enter / Space
+    header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleFilter();
+        }
+    });
+});
