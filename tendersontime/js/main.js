@@ -253,3 +253,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+// tenders-detail-active-section-tabs 
+const tabs = document.querySelectorAll('.top-line-container span');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+
+        tabs.forEach(item => {
+            item.classList.remove('active');
+        });
+
+        tab.classList.add('active');
+    });
+});
