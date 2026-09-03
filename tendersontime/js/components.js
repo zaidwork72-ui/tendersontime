@@ -53,6 +53,12 @@ async function loadComponent(elementId, componentPath) {
         const currentScript = document.currentScript || Array.from(document.querySelectorAll('script')).find(script => script.src.includes('/js/components.js'));
         const base = currentScript && currentScript.src ? currentScript.src : window.location.href;
 
+        const signInLink = document.querySelector('#navbar .signIn');
+        if (signInLink) {
+          const loginUrl = new URL('../pages/auth/login.html', base).href;
+          signInLink.setAttribute('href', loginUrl);
+        }
+
         const logoImg = document.querySelector('#navbar .logo img');
         const logoWrapper = document.querySelector('#navbar .logo');
         if (logoImg && logoWrapper) {

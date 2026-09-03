@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personalize Experience | Defence Tenders</title>
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/auth.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  </head>
+  <body class="auth-body">
+    <div id="navbar"></div>
+
+    <main class="auth-shell">
+      <section class="auth-card">
+        <div class="auth-visual">
+          <div class="auth-badge">Personalize</div>
+          <h2>Personalize your experience</h2>
+          <p>Choose your interests and unlock defence tenders that match your focus areas and priorities.</p>
+
+          <div class="auth-feature-list">
+            <div class="auth-feature-item">
+              <span class="material-symbols-outlined">track_changes</span>
+              <span>Get better recommendations across countries, categories and keywords.</span>
+            </div>
+            <div class="auth-feature-item">
+              <span class="material-symbols-outlined">notifications_active</span>
+              <span>Receive timely alerts when relevant opportunities match your profile.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-form-panel">
+          <div class="auth-header">
+            <div class="auth-brand">Choose your interests</div>
+            <h1>Personalize your experience</h1>
+          </div>
+
+          <form class="auth-form" action="../../index.html" method="post">
+            <div class="preference-grid">
+              <div class="field-group full">
+                <div class="field-top">
+                  <label class="field-label" for="pref-name">Name</label>
+                  <span class="field-meta">Your Info text here</span>
+                </div>
+                <input class="auth-input" id="pref-name" type="text" placeholder="Name" />
+                <span class="field-error">This is error</span>
+              </div>
+
+              <div class="field-group full">
+                <div class="field-top">
+                  <label class="field-label" for="pref-countries">Countries of interest</label>
+                  <span class="field-meta">Your Info text here</span>
+                </div>
+                <input class="auth-input" id="pref-countries" type="text" placeholder="Enter keywords. e.g radar, drone, surveillance" />
+                <span class="field-error">This is error</span>
+              </div>
+
+              <div class="field-group full">
+                <div class="field-top">
+                  <label class="field-label" for="pref-categories">Defence categories</label>
+                  <span class="field-meta">Your Info text here</span>
+                </div>
+                <input class="auth-input" id="pref-categories" type="text" placeholder="Enter keywords. e.g radar, drone, surveillance" />
+                <span class="field-error">This is error</span>
+              </div>
+
+              <div class="field-group full">
+                <div class="field-top">
+                  <label class="field-label" for="pref-keywords">Keywords (optional)</label>
+                  <span class="field-meta">Your Info text here</span>
+                </div>
+                <input class="auth-input" id="pref-keywords" type="text" placeholder="E.G. Drone, radar, naval" />
+                <span class="field-error">This is error</span>
+              </div>
+
+              <div class="field-group full">
+                <label class="checkbox-inline" for="product-demo">
+                  <input id="product-demo" type="checkbox" />
+                  <span>I’d like a product demo</span>
+                </label>
+                <div class="field-meta">Your Info text here</div>
+              </div>
+            </div>
+
+            <button type="submit" class="primary-btn">Start exploring</button>
+            <button type="button" class="ghost-btn" onclick="window.location.href='../../index.html'">Skip for now</button>
+
+            <div class="auth-success-note">You can update these preferences anytime from your profile.</div>
+
+            <div class="auth-footer">
+              Already have an account? <a href="login.html">Sign in</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="../../js/components.js"></script>
+  </body>
+</html>
