@@ -2691,7 +2691,7 @@ img {
 
     /* TESTIMONIALS */
     .testimonials {
-        padding: 60px 0;
+        padding: 40px 0;
         margin-top: 40px;
     }
 
@@ -3058,6 +3058,7 @@ img {
         flex-direction: column;
         margin: 0px;
         width: 100%;
+        gap: 14px;
     }
 
     .tes-container .rightAlign {
@@ -3740,10 +3741,13 @@ img {
     }
 
     .rightAlign .review {
-        flex: 0 0 280px;
-        width: 280px;
-        max-width: 280px;
+        flex: 0 0 320px;
         box-sizing: border-box;
+        padding: 16px !important;
+    }
+
+    .rightAlign .review-text{
+        padding-bottom: 0;
     }
 
 
@@ -3874,6 +3878,11 @@ img {
         padding-right: 16px;
         margin: 0;
         box-sizing: border-box;
+    }
+
+    .left-align .para p{
+        font-size: 14px;
+        padding-bottom: 20px;
     }
 
     /* FAQ */
