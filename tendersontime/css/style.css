@@ -2693,6 +2693,7 @@ img {
     /* TESTIMONIALS */
     .testimonials {
         padding: 60px 0;
+        margin-top: 40px;
     }
 
     .tes-container .left-align {
@@ -2809,12 +2810,12 @@ img {
     }
 
     .discover-section {
-        padding-top: 70px;
+        padding-top: 40px;
     }
 
     /* WHY DEFENCE TENDERS */
     .why-defence-tenders {
-        padding-top: 70px;
+        padding-top: 40px;
     }
 
     .lower .card {
@@ -2823,7 +2824,7 @@ img {
 
     /* READY SECTION */
     .ready {
-        padding-top: 70px;
+        padding-top: 40px;
     }
 
     .ready .ready-container {
@@ -2852,7 +2853,7 @@ img {
 
     /* MARKET SECTION */
     .market-section {
-        padding-top: 70px;
+        padding-top: 40px;
     }
 
     .market-left h2 {
@@ -3075,7 +3076,7 @@ img {
 
     /* FAQ */
     .faq-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
 
     .faq-container {
@@ -3098,8 +3099,10 @@ img {
 
     /* DISCOVER HEADER */
     .discover-header h1 {
-        font-size: 28px;
+        font-size: 24px;
     }
+
+
 }
 
 
@@ -3531,7 +3534,6 @@ img {
         display: flex;
         flex-wrap: nowrap;
         width: max-content;
-        /* gap: 8px; */
         animation: scrollLogos 22s linear infinite;
         will-change: transform;
     }
@@ -3541,6 +3543,8 @@ img {
         display: flex;
         flex-wrap: nowrap;
         gap: 8px;
+        right: 8px;
+        left: 8px;
     }
 
     .trusted-logo {
@@ -3768,6 +3772,11 @@ img {
         box-sizing: border-box;
     }
 
+    .discover-header p {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
     /* HOW DEFENCE TENDERS WORKS */
     .defence-container {
         width: 100%;
@@ -3802,6 +3811,10 @@ img {
         padding-right: 0;
     }
 
+
+.column-header {
+    margin-bottom: 16px;
+}
     /* READY TO ACCESS */
     .ready .ready-container {
         width: 100%;
