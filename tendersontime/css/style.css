@@ -2013,7 +2013,6 @@ img {
 }
 
 .region-card h4 {
-    margin: 0 0 4px;
     font-size: 16px;
     font-weight: 500;
     color: var(--primary-text);
@@ -3236,7 +3235,16 @@ img {
     }
 
     .market-list {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
+    }
+        .market-list .market-item:nth-child(n + 7) {
+        display: none;
+    }
+
+    .market-list .market-item:nth-child(6){
+        border-bottom: none;
+        padding-bottom: 0;
     }
 
     .market-item:nth-child(2n) {
