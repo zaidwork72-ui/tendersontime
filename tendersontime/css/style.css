@@ -3438,7 +3438,7 @@ img {
     }
 
     .stats-heading {
-        margin-bottom: 24px;
+        margin-bottom: 16px !important;
     }
 
     .stats-heading h2{
