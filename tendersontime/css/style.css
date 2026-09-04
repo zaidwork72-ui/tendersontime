@@ -2991,6 +2991,7 @@ img {
 
     .defence-description {
         font-size: 14px;
+        display: none;
     }
 
     .trusted-logo {
@@ -3195,11 +3196,13 @@ img {
 
     .defence-title {
         font-size: 24px;
+        display: none;
     }
 
     .defence-points li {
         font-size: 13px;
         align-items: flex-start;
+        display: none;
     }
 
     .column-panel {
