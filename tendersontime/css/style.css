@@ -2936,6 +2936,7 @@ img {
         border-radius: 0;
         position: relative;
         top: auto;
+        box-shadow: none;
     }
 
         .stats-container {
