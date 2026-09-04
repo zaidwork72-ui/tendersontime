@@ -2972,7 +2972,9 @@ img {
     .stat-text h3 {
         margin: 0 0 4px;
     }
-
+    .stat-text {
+        gap: 0;
+    }
     .stat-text p {
         margin: 0;
     }
@@ -3439,14 +3441,19 @@ img {
         margin-bottom: 24px;
     }
 
+    .stats-heading h2{
+        font-size: 20px;
+        line-height: 1.50;
+    } 
+
     .stats-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        gap: 16px;
     }
 
     .stat-item {
-        padding: 20px;
+        padding: 16px;
         border: 1px solid #d8d8d8;
         border-radius: 8px;
         display: flex;
@@ -3461,7 +3468,7 @@ img {
     }
 
     .stat-text h3 {
-        margin: 0 0 4px;
+        margin: 0;
         font-size: 20px;
     }
 
