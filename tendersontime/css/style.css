@@ -1979,7 +1979,7 @@ img {
 .region-card {
     background: var(--white);
     border-radius: 8px;
-    padding: 12px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -1994,7 +1994,7 @@ img {
     width: 100%;
     aspect-ratio: 4 / 3;
     background: var(--primary-bg);
-    border-radius: 6px;
+    border-radius: 6px 6PX 0 0;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -3810,6 +3810,11 @@ img {
         padding-left: 0;
         padding-right: 0;
     }
+
+    
+.market-link{
+    display: none;
+}
 
 
 .column-header {
