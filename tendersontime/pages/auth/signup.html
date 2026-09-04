@@ -4,121 +4,130 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up | Defence Tenders</title>
-    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
     <link rel="stylesheet" href="../../css/auth.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   </head>
   <body class="auth-body">
     <div id="navbar"></div>
+    <main>
+        <section class="st-signup">
+            <div class="st-signup__wrap">
+                <div class="st-signup__card">
 
-    <main class="auth-shell">
-      <section class="auth-card">
-        <div class="auth-visual">
-          <div class="auth-badge">Global access</div>
-          <h1>Unlock global defence tenders</h1>
-          <p>Create your free account to discover verified defence opportunities worldwide.</p>
+                    <div class="st-signup__head">
+                        <span class="st-signup__title">Unlock global defence tenders</span>
+                        <p class="st-signup__subtitle">Create your free account to discover verified <br> defence opportunities worldwide.</p>
+                        <a href="../../index.html" class="st-signup__close">
+                            <span class="material-symbols-outlined">close_small</span>
+                        </a>
+                    </div>
 
-          <div class="auth-feature-list">
-            <div class="auth-feature-item">
-              <span class="material-symbols-outlined">check_circle</span>
-              <span>Verified opportunities from trusted public sources.</span>
+                    <!-- <div class="st-signup__progress">
+                        <div class="st-signup__progress-track">
+                            <div class="st-signup__progress-fill"></div>
+                        </div>
+                        <span class="st-signup__progress-label">Step 1 of 2 — your details</span>
+                    </div> -->
+
+                    <div class="st-signup__fields">
+
+                        <div class="st-field">
+                            <span class="material-symbols-outlined st-field__icon">person</span>
+                            <input type="text" class="st-field__input" placeholder="Name">
+                        </div>
+
+                        <div class="st-field">
+                            <span class="material-symbols-outlined st-field__icon">mail</span>
+                            <input type="email" class="st-field__input" placeholder="Email address">
+                        </div>
+
+                        <div class="st-field-group">
+                            <div class="st-field">
+                                <span class="material-symbols-outlined st-field__icon">call</span>
+                                <input type="tel" class="st-field__input" placeholder="Work phone number">
+                            </div>
+                            <p class="st-field-group__hint">We'll only use this to contact you about your account or subscription.</p>
+                        </div>
+
+                        <div class="st-field-group">
+                            <div class="st-field">
+                                <span class="material-symbols-outlined st-field__icon">lock</span>
+                                <input type="password" class="st-field__input" placeholder="Password" id="stSignupPassword">
+                                <button type="button" class="st-field__toggle" aria-label="Show password">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                            </div>
+                            <div class="st-strength" id="stStrengthMeter">
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                            <p class="st-field-group__hint">Use at least 8 characters with uppercase, lowercase, a number, and a special character.</p>
+                        </div>
+
+                        <div class="st-field-group">
+                            <div class="st-field">
+                                <span class="material-symbols-outlined st-field__icon">lock</span>
+                                <input type="password" class="st-field__input" placeholder="Re-enter password" id="stSignupConfirm">
+                                <button type="button" class="st-field__toggle" aria-label="Show password">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                            </div>
+                            <p class="st-field-group__hint st-field-group__hint--error" id="stConfirmError" hidden>Passwords don't match.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="st-signup__cta">
+                        <button class="st-btn-primary">
+                            <a href="../../pages/auth/signup-confirmation.html">
+                                Create free account
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </button>
+                    </div>
+
+                    <div class="st-signup__divider-block">
+                        <div class="st-divider">
+                            <span class="st-divider__line"></span>
+                            <span class="st-divider__label">Or continue with</span>
+                            <span class="st-divider__line"></span>
+                        </div>
+                        <div class="st-social-row">
+                            <span class="st-social-btn">
+                                <!-- <span class="material-symbols-outlined st-social-btn__icon st-social-btn__icon--google">g_mobiledata</span> -->
+                                Google
+                            </span>
+                            <span class="st-social-btn">
+                                <!-- <span class="material-symbols-outlined st-social-btn__icon">phone_iphone</span> -->
+                                Apple
+                            </span>
+                            <span class="st-social-btn">
+                                <!-- <span class="material-symbols-outlined st-social-btn__icon st-social-btn__icon--facebook">facebook</span> -->
+                                Facebook
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="st-signup__trust">
+                        <span class="material-symbols-outlined">verified_user</span>
+                        <span>Trusted by 12,000+ verified defence contractors</span>
+                    </div>
+
+                    <div class="st-signup__legal">
+                        By continuing you accept our terms of use and privacy policy.
+                    </div>
+
+                    <div class="st-signup__footer">
+                        Already have an account?
+                        <a href="../auth/login.html">Sign in</a>
+                    </div>
+
+                </div>
             </div>
-            <div class="auth-feature-item">
-              <span class="material-symbols-outlined">check_circle</span>
-              <span>Tailored alerts based on your defence interests.</span>
-            </div>
-            <div class="auth-feature-item">
-              <span class="material-symbols-outlined">check_circle</span>
-              <span>Track the tenders that matter most to your market.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="auth-form-panel">
-          <div class="auth-header">
-            <div class="auth-brand">Create account</div>
-            <h1>Get started</h1>
-          </div>
-
-          <form class="auth-form" action="signup-confirmation.html" method="post">
-            <div class="field-group">
-              <div class="field-top">
-                <label class="field-label" for="signup-name">Name</label>
-                <span class="field-meta">Your Info text here</span>
-              </div>
-              <input class="auth-input" id="signup-name" type="text" placeholder="Enter keywords. e.g radar, drone, surveillance" />
-              <span class="field-error">This is error</span>
-            </div>
-
-            <div class="field-group">
-              <div class="field-top">
-                <label class="field-label" for="signup-email">Email address</label>
-                <span class="field-meta">Your Info text here</span>
-              </div>
-              <input class="auth-input" id="signup-email" type="email" placeholder="Enter keywords. e.g radar, drone, surveillance" />
-              <span class="field-error">This is error</span>
-            </div>
-
-            <div class="field-group">
-              <div class="field-top">
-                <label class="field-label" for="signup-phone">Work phone number</label>
-                <span class="field-meta">Your Info text here</span>
-              </div>
-              <input class="auth-input" id="signup-phone" type="tel" placeholder="Enter keywords. e.g radar, drone, surveillance" />
-              <div class="field-meta">We'll only use this to contact you about your account or subscription.</div>
-              <span class="field-error">This is error</span>
-            </div>
-
-            <div class="field-group">
-              <div class="field-top">
-                <label class="field-label" for="signup-password">Password</label>
-                <span class="field-meta">Your Info text here</span>
-              </div>
-              <input class="auth-input" id="signup-password" type="password" placeholder="Enter keywords. e.g radar, drone, surveillance" />
-              <div class="field-meta">Use at least 8 characters with uppercase, lowercase, a number, and a special character.</div>
-              <span class="field-error">This is error</span>
-            </div>
-
-            <div class="field-group">
-              <div class="field-top">
-                <label class="field-label" for="signup-confirm-password">Re-enter password</label>
-                <span class="field-meta">Your Info text here</span>
-              </div>
-              <input class="auth-input" id="signup-confirm-password" type="password" placeholder="Enter keywords. e.g radar, drone, surveillance" />
-              <span class="field-error">This is error</span>
-            </div>
-
-            <button type="submit" class="primary-btn">Create free account</button>
-
-            <div class="divider"><span>Or continue with</span></div>
-
-            <div class="social-row">
-              <button type="button" class="social-btn">
-                <span class="social-mark google">G</span>
-                Google
-              </button>
-              <button type="button" class="social-btn">
-                <span class="social-mark apple"></span>
-                Apple
-              </button>
-              <button type="button" class="social-btn">
-                <span class="social-mark facebook">f</span>
-                Facebook
-              </button>
-            </div>
-
-            <p class="auth-legal">
-              By continuing you accept our <a href="#">terms of use</a> and <a href="#">privacy policy</a>.
-            </p>
-
-            <div class="auth-footer">
-              Already have an account? <a href="login.html">Sign in</a>
-            </div>
-          </form>
-        </div>
-      </section>
+        </section>
     </main>
-
+    <div id="footer"></div>
     <script src="../../js/components.js"></script>
+    <script src="../../js/main.js"></script>
   </body>
 </html>

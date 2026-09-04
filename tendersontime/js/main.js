@@ -269,3 +269,62 @@ tabs.forEach(tab => {
         tab.classList.add('active');
     });
 });
+
+
+
+
+
+// SIGNUYP
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Show / hide password toggles (works for both password fields)
+    document.querySelectorAll('.st-field__toggle').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const input = btn.previousElementSibling;
+            const icon = btn.querySelector('.material-symbols-outlined');
+            const isPassword = input.type === 'password';
+            input.type = isPassword ? 'text' : 'password';
+            icon.textContent = isPassword ? 'visibility_off' : 'visibility';
+        });
+    });
+
+    // Password strength meter
+    const pwdInput = document.getElementById('stSignupPassword');
+    const strengthMeter = document.getElementById('stStrengthMeter');
+
+    if (pwdInput && strengthMeter) {
+        pwdInput.addEventListener('input', () => {
+            const val = pwdInput.value;
+            let score = 0;
+            if (val.length >= 8) score++;
+            if (/[A-Z]/.test(val) && /[a-z]/.test(val)) score++;
+            if (/\d/.test(val)) score++;
+            if (/[^A-Za-z0-9]/.test(val)) score++;
+
+            strengthMeter.className = 'st-strength';
+            if (val.length === 0) return;
+
+            if (score <= 1) strengthMeter.classList.add('st-strength--weak');
+            else if (score === 2) strengthMeter.classList.add('st-strength--medium');
+            else if (score === 3) strengthMeter.classList.add('st-strength--strong');
+            else strengthMeter.classList.add('st-strength--very-strong');
+        });
+    }
+
+    // Confirm password match check
+    const confirmInput = document.getElementById('stSignupConfirm');
+    const confirmError = document.getElementById('stConfirmError');
+
+    if (pwdInput && confirmInput && confirmError) {
+        const checkMatch = () => {
+            if (confirmInput.value.length === 0) {
+                confirmError.hidden = true;
+                return;
+            }
+            confirmError.hidden = confirmInput.value === pwdInput.value;
+        };
+        confirmInput.addEventListener('input', checkMatch);
+        pwdInput.addEventListener('input', checkMatch);
+    }
+
+});

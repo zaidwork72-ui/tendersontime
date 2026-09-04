@@ -529,12 +529,11 @@ textarea {
 }
 
 .login .login-container{
-    margin: auto;
+    margin: 90px auto;
     width: min(1400px, calc(100% - 40px));
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 .login-container .login-card{
@@ -548,9 +547,10 @@ textarea {
 }
 
 .login-card .firstclass{
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 }
 
 .firstclass span{
@@ -570,6 +570,13 @@ textarea {
     cursor: pointer;
 }
 
+
+.firstclass > a {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 .login-container .secondclass{
     display: flex;
     flex-direction: column;
@@ -587,7 +594,7 @@ textarea {
 input::placeholder{
     font-size: 16px;
     font-weight: 400;
-    color: var(--body-text);
+    color: rgba(198, 198, 198, 1)
 }
 
 .secondclass .pass input{
@@ -744,5 +751,423 @@ input::placeholder{
 
 .forthclass-down span{
     padding: 8px 16px;
-    border: 1px solid var(--icon-primary);
+    border: 1px solid rgba(216, 216, 216, 1);
+    flex: 1;
+    text-align: center;
+    border-radius: 999px;
+    cursor: pointer;
+    color: var(--body-text);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.forthclass-down span:hover{
+    background-color: var(--primary-bg);
+}
+
+
+.login-card .fifthclass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--body-text);
+}
+
+.fifthclass a{
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card .sixthclass{
+    color: var(--body-text);
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* ===================================
+   Signup page — st-* namespace
+   Uses existing tokens from :root
+   (--accent, --primary-text, --light-text,
+    --white, --body-text, --icon-primary)
+   =================================== */
+
+.st-signup {
+    width: auto;
+    height: auto;
+}
+
+.st-signup__wrap {
+    margin: 90px auto;
+    width: min(1400px, calc(100% - 40px));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.st-signup__card {
+    padding: 24px;
+    gap: 18px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 460px;
+}
+
+/* ---------- Header ---------- */
+.st-signup__head {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.st-signup__title {
+    color: var(--primary-text);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.st-signup__subtitle {
+    margin-top: 8px;
+    color: var(--body-text);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.st-signup__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.st-signup__close .material-symbols-outlined {
+    font-size: 24px;
+    color: var(--icon-primary);
+}
+
+/* ---------- Progress ---------- */
+.st-signup__progress {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.st-signup__progress-track {
+    display: flex;
+    gap: 6px;
+}
+
+.st-signup__progress-track::before,
+.st-signup__progress-track::after {
+    content: "";
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(216, 216, 216, 1);
+}
+
+.st-signup__progress-track::before {
+    background: var(--accent);
+}
+
+.st-signup__progress-label {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--light-text);
+}
+
+/* ---------- Fields ---------- */
+.st-signup__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.st-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.st-field-group__hint {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--light-text);
+    line-height: 1.4;
+}
+
+.st-field-group__hint--error {
+    color: #E24B4A;
+}
+
+.st-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.st-field__icon {
+    position: absolute;
+    left: 16px;
+    font-size: 20px;
+    color: var(--icon-primary);
+    pointer-events: none;
+}
+
+.st-field__input {
+    width: 100%;
+    padding: 12px 20px 12px 44px;
+    border: 2px solid rgba(198, 198, 198, 1);
+    border-radius: 999px;
+}
+
+.st-field__input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(198, 198, 198, 1);
+}
+
+.st-field__input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.st-field:has(.st-field__toggle) .st-field__input {
+    padding-right: 44px;
+}
+
+.st-field__toggle {
+    position: absolute;
+    right: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--icon-primary);
+    display: flex;
+    align-items: center;
+}
+
+.st-field__toggle .material-symbols-outlined {
+    font-size: 20px;
+}
+
+/* ---------- Password strength meter ---------- */
+.st-strength {
+    display: flex;
+    gap: 4px;
+}
+
+.st-strength span {
+    flex: 1;
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(216, 216, 216, 1);
+    transition: background 0.2s ease;
+}
+
+.st-strength--weak span:nth-child(1) {
+    background: #E24B4A;
+}
+
+.st-strength--medium span:nth-child(1),
+.st-strength--medium span:nth-child(2) {
+    background: #EF9F27;
+}
+
+.st-strength--strong span:nth-child(1),
+.st-strength--strong span:nth-child(2),
+.st-strength--strong span:nth-child(3) {
+    background: #1D9E75;
+}
+
+.st-strength--very-strong span {
+    background: #1D9E75;
+}
+
+/* ---------- CTA button ---------- */
+.st-signup__cta {
+    display: flex;
+}
+
+.st-btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 14px 24px;
+    background-color: var(--accent);
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.st-btn-primary:hover {
+    background-color: #A97C0F;
+}
+
+.st-btn-primary a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* ---------- Divider + social ---------- */
+.st-signup__divider-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.st-divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+}
+
+.st-divider__line {
+    height: 1px;
+    width: 100%;
+    background: rgba(216, 216, 216, 1);
+}
+
+.st-divider__label {
+    width: auto;
+    white-space: nowrap;
+    color: var(--icon-primary);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.st-social-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.st-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid rgba(216, 216, 216, 1);
+    flex: 1;
+    text-align: center;
+    border-radius: 999px;
+    cursor: pointer;
+    color: var(--body-text);
+    font-size: 14px;
+    font-weight: 400;
+    transition: background-color 0.2s ease;
+}
+
+.st-social-btn:hover {
+    background-color: var(--primary-bg);
+}
+
+.st-social-btn__icon {
+    font-size: 18px;
+}
+
+.st-social-btn__icon--google {
+    color: #EA4335;
+}
+
+.st-social-btn__icon--facebook {
+    color: #1877F2;
+}
+
+/* ---------- Trust badge ---------- */
+.st-signup__trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: var(--bg-gold);
+    border-radius: 10px;
+    color: var(--body-text);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.st-signup__trust .material-symbols-outlined {
+    font-size: 16px;
+    color: #1D9E75;
+}
+
+/* ---------- Legal + footer ---------- */
+.st-signup__legal {
+    color: var(--body-text);
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.st-signup__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--body-text);
+}
+
+.st-signup__footer a {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.st-signup__footer a:hover {
+    color: var(--primary-text);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    .st-signup__wrap {
+        margin: 40px auto;
+        width: calc(100% - 24px);
+    }
+
+    .st-signup__card {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .st-social-row {
+        flex-direction: column;
+    }
 }

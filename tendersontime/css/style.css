@@ -3044,6 +3044,8 @@ img {
     /* TESTIMONIALS */
     .testimonials .tes-container {
         flex-direction: column;
+        margin: 0px;
+        width: 100%;
     }
 
     .tes-container .rightAlign {
@@ -3694,3 +3696,106 @@ img {
     }
 }
 
+
+/* ============================================================
+   FINAL FIX — Har section mein sirf 16px side padding (mobile)
+   Ye block file ke sabse LAST mein hona chahiye
+============================================================ */
+@media (max-width: 768px) {
+
+    html, body { overflow-x: hidden; }
+
+    /* HERO */
+    .hero .size {
+        width: 100%;
+        padding: 0 16px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .hero-content {
+        padding: 0;
+    }
+
+    /* STATS */
+    .stats-section {
+        width: 100%;
+        padding: 24px 0;
+        margin: 0;
+        border-radius: 0;
+    }
+    .stats-container {
+        width: 100%;
+        padding: 0 16px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* HOW DEFENCE TENDERS WORKS */
+    .defence-container {
+        width: 100%;
+        padding: 0 16px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* DISCOVER SECTION */
+    .discover-section {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* MARKET SECTION */
+    .market-container {
+        width: 100%;
+        padding: 0 16px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .market-container .blur {
+        width: 100%;
+        margin: 8px 0;
+    }
+    .market-left,
+    .market-right {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* READY TO ACCESS */
+    .ready .ready-container {
+        width: 100%;
+        padding: 24px 16px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* WHY DEFENCE TENDERS */
+    .why-defence-tenders .defence-tender-container {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* TESTIMONIALS */
+    .tes-container {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* FAQ */
+    .faq-container {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
