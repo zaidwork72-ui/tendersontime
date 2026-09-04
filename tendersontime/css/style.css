@@ -2937,6 +2937,7 @@ img {
         position: relative;
         top: auto;
         box-shadow: none;
+        background-color: var(--white);
     }
 
         .stats-container {
@@ -2982,6 +2983,7 @@ img {
     /* DEFENCE SECTION */
     .defence-section {
         padding: 60px 0 0;
+        background-color: var(--primary-bg);
     }
 
     .defence-container {
