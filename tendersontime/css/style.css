@@ -3228,6 +3228,10 @@ img {
 
     .market-description {
         font-size: 14px;
+        margin-bottom: 0;
+    }
+    .region-card{
+        padding: 8px;
     }
 
     .market-region-grid {
