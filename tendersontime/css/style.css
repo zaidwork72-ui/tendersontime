@@ -2781,6 +2781,7 @@ img {
     /* HERO */
     .hero-title {
         font-size: clamp(26px, 6vw, 42px);
+        line-height: 1.50;
     }
 
     .search-form {
@@ -2891,6 +2892,11 @@ img {
     .search-box {
         padding: 20px 16px;
         border-width: 3px;
+        border-radius: 16px;
+    }
+
+    .searchboxxx{
+        border-radius: 16px;
     }
 
     .search-header {
@@ -3098,6 +3104,7 @@ img {
 
     .hero-title {
         font-size: 24px;
+        line-height: 1.50;
     }
 
     .input-wrapper,
@@ -3266,6 +3273,11 @@ img {
 
     .search-box {
         padding: 16px 12px;
+        border-radius: 16px;
+    }
+
+    .searchboxxx{
+        border-radius: 16px;
     }
 
     .popular-categories a {
