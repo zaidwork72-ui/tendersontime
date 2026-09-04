@@ -3634,8 +3634,7 @@ img {
     }
 
     .lower .card {
-        flex: 0 0 260px;
-        width: 350px;
+        flex: 0 0 320px;
         display: flex;
         padding: 16px;
     }
