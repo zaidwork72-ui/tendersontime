@@ -2163,7 +2163,7 @@ img {
     font-size: clamp(28px, 3.2vw, 40px);
     font-weight: 500;
     color: #21272A;
-    line-height: 1.15;
+    line-height: 1.30;
     margin-bottom: 8px;
 }
 
@@ -3113,7 +3113,7 @@ img {
 
     .hero-title {
         font-size: 24px;
-        line-height: 1.50;
+        line-height: 1.30;
     }
 
     .input-wrapper,
