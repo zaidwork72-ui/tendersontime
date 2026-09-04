@@ -3377,7 +3377,7 @@ img {
     }
 
     .lower .card {
-        padding: 18px;
+        padding: 16px;
     }
 
     .rightAlign .review {
@@ -3635,8 +3635,9 @@ img {
 
     .lower .card {
         flex: 0 0 260px;
-        width: 260px;
+        width: 290px;
         display: flex;
+        padding: 16px;
     }
 
     .why-controls {
@@ -3657,6 +3658,10 @@ img {
         justify-content: center;
         cursor: pointer;
         user-select: none;
+    }
+
+    .card .card-heading h2 {
+        font-size: 20px;
     }
 
 
@@ -3680,6 +3685,11 @@ img {
         width: 100%;
         overflow: hidden;
         order: 1;
+    }
+
+    .upper .main-para p{
+        padding-bottom: 20px;
+        font-size: 14px;
     }
 
     .testimonial-nav {
