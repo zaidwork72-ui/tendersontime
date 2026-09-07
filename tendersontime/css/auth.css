@@ -523,279 +523,632 @@ textarea {
 
 
 /* login-section */
-.login{
-    width: auto;
-    height: auto;
+main{
+  background-color: var(--primary-bg);
 }
 
-.login .login-container{
-    margin: 90px auto;
-    width: min(1400px, calc(100% - 40px));
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.top{
+  width: min(1400px, calc(100% - 40px));
+  margin: 0 auto;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
-.login-container .login-card{
-    padding: 24px;
-    gap: 24px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--white);
-    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.15);
-    border-radius: 16px;
+.top .top-container{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
 }
 
-.login-card .firstclass{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.top .breadcrumb{
+  grid-column: 2;       /* left box se align — column 2 se start */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;   /* sirf jitni content utni hi width */
 }
 
-.firstclass span{
-    color: var(--primary-text);
-    font-size: 24px;
-    font-weight: 500;
-    justify-content: space-between;
-    align-items: center;
+.top .home{
+  color: var(--light-text);
+  font-size: 14px;
+  line-height: 140%;
+  font-weight: 400;
 }
 
-.firstclass a span{
-    font-size: 24px;
-    color: rgba(117, 119, 121, 1);
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    cursor: pointer;
+.top .right{
+  color: rgba(162, 169, 176, 1);
+  font-size: 12px;
+  line-height: 140%;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
 }
 
-
-.firstclass > a {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.login-container .secondclass{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-}
-
-.secondclass .email input{
-    width: 100%;
-    padding: 12px 20px;
-    border: 2px solid rgba(198, 198, 198, 1);
-    border-radius: 999px;
-}
-
-input::placeholder{
-    font-size: 16px;
-    font-weight: 400;
-    color: rgba(198, 198, 198, 1)
-}
-
-.secondclass .pass input{
-    width: 100%;
-    padding: 12px 20px;
-    border: 2px solid rgba(198, 198, 198, 1);
-    border-radius: 999px;
-}
-
-.secondclass .forgot {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Keep me signed in */
-.secondclass .forgot .checkbox-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
+.top .login{
     color: var(--body-text);
-    font-size: 14px;
-    font-weight: 400;
-
-    cursor: pointer;
+  font-size: 14px;
+  line-height: 140%;
+  font-weight: 400;
 }
 
-/* Hide original checkbox */
-.secondclass .forgot .checkbox-wrapper input {
-    display: none;
+.authentication{
+  width: min(1400px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-bottom: 150px;
 }
 
-/* Custom checkbox */
-.secondclass .forgot .custom-checkbox {
-    width: 16px;
-    height: 16px;
+.authentication .authentication-container{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0;
+}
+
+.authentication-container .authenticate-left{
+  grid-column: 2 / 7;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(
+    to right,
+    rgba(18, 40, 66, 0.95),
+    rgba(28, 54, 87, 0.95),
+    rgba(7, 25, 43, 0.95)
+  ),
+  url("../assets/tank.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 24px 0 0 24px;
+  padding: 64px 64px 56px 64px;
+  gap: 56px;
+}
+
+.authenticate-left .info{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info .supporting-line{
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.supporting-line .gap{
+  height: 2px;
+  width: 16px;
+  background-color: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.supporting-line .line-txt{
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info .heading{
+  font-size: 39px;
+  font-weight: 500;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 110%;
+  width: 100%;
+}
+
+.info .subheading p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--primary-bg);
+  line-height: 155%;
+  width: 420px;
+}
+
+.info .info-points ul li{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.info .info-points ul li a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 400;
+  cursor: default;
+}
+
+.info .info-points ul li a span{
+  color: var(--accent);
+}
+
+.authenticate-left .single-testimonial{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid var(--primary-bg);
+  border-radius: 12px;
+  gap: 16px;
+}
+
+.single-testimonial .single-avtar{
+  padding: 11.5px 12.5px;
+  background-color: var(--accent);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-testimonial .single-text{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.single-text .txt-heading{
+  display: flex;
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.single-testimonial .single-text .sub-txt{
+  color: rgba(138, 172, 191, 1);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.authentication-container .authenticate-right{
+  grid-column: 7 / 12;
+  background-color: var(--white);
+  border-radius: 0 16px 16px 0;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.authenticate-right .login-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 64px 80px;
+  height: 100%;
+  width: 100%;
+  gap: 24px;
+}  
+
+.login-container .login-header{
+  color: var(--primary-text);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container .inputfields {
 
     display: flex;
-    align-items: center;
+
+    flex-direction: column;
+
+    gap: 16px;
+
     justify-content: center;
 
-    border: 2px solid var(--accent);
-    border-radius: 3px;
+    align-items: flex-start;
+
+    width: 100%;
+
+}
+
+
+.inputfields .topfields {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    width: 100%;
+
+}
+
+
+.topfields input {
+
+    padding: 12px 20px;
+
+    border-radius: 999px;
+
+    border: 2px solid rgba(198, 198, 198, 1);
+
+    width: 100%;
 
     box-sizing: border-box;
+
 }
 
-/* Material check icon */
-.secondclass .forgot .custom-checkbox .material-symbols-outlined {
-    display: none;
-    padding: 2px;
-    font-size: 16px;
-    color: var(--white);
+
+/* Password */
+
+.topfields .password-field {
+
+    position: relative;
+
+    width: 100%;
+
+}
+
+
+.password-field input {
+
+    padding-right: 50px;
+
+}
+
+
+.password-field .password-toggle {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 20px;
+
+    color: var(--body-text);
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+
+
+/* Down fields */
+
+.inputfields .downfields {
+
     display: flex;
-    justify-content: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
     align-items: center;
+
 }
 
-/* Checked state */
-.secondclass .forgot .checkbox-wrapper input:checked + .custom-checkbox {
-    background-color: var(--accent);
-    border-color: var(--accent);
+
+/* Checkbox */
+
+.checkboxx {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+
 }
 
-/* Show check icon */
-.secondclass .forgot .checkbox-wrapper input:checked + .custom-checkbox .material-symbols-outlined {
+
+.checkboxx input {
+
+    display: none;
+
+}
+
+
+.custom-checkbox {
+
+    width: 16px;
+
+    height: 16px;
+
+    border: 2px solid var(--accent);
+
+    border-radius: 3px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+}
+
+
+.custom-checkbox .material-symbols-outlined {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: var(--accent);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.checkboxx input:checked + .custom-checkbox .material-symbols-outlined {
+
     display: block;
+
 }
+
+
+.checkboxx .sign {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: var(--body-text);
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+}
+
 
 /* Forgot password */
-.secondclass .forgot > span:last-child {
-    color: var(--body-text);
+
+.downfields .forgotpass a {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: var(--accent);
+
     font-size: 14px;
+
     font-weight: 400;
+
+    line-height: 130%;
+
     cursor: pointer;
+
 }
 
-.forgot .pass{
-    color: var(--accent) !important;
+.login-button{
+  width: 100%;
 }
 
-.forgot .pass:hover{
-    color: var(--primary-text) !important;
-}
-
-.login-card .thirdclass button{
+.login-container .login-button button {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 14px 24px;
+    gap: 8px;
     background-color: var(--accent);
     border-radius: 999px;
     border: none;
     cursor: pointer;
-}
-
-.thirdclass button a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+    color: var(--white);
     font-size: 16px;
     font-weight: 500;
-    color: var(--white);
 }
 
-.thirdclass button:hover{
-    background-color: #A97C0F;
+.login-container .login-button button:hover{
+  background-color: #A97C0F;
 }
 
-.login-card .fourthclass{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.login-button button a{
+      color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.login-button button span {
+    position: absolute;
+    right: 24px;
+    font-size: 16px;
     justify-content: center;
     align-items: center;
 }
 
-.fourthclass .forthclass-up{
+.login-container .signinoptions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+}
+
+.signinoptions .signn{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
+.signn .txt{
+  color: var(--icon-primary);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.signn .space{
+  border: 1px solid var(--primary-body);
+  flex: 1;
+}
+
+.signinoptions .otheoptions {
+    width: 100%;
+}
+
+.signinoptions .otheoptions ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.signinoptions .otheoptions ul li {
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 12px;
-}
-
-.forthclass-up span{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    color: var(--icon-primary);
-    font-size: 12px;
-    font-weight: 400;
-}
-
-.forthclass-up .line{
-    height: 1px;
-    width: 100%;
-}
-
-.forthclass-up > span:not(.line){
-    width: auto;
-    display: flex;
-    white-space: nowrap;
-}
-
-.fourthclass .forthclass-down{
-    display: flex;
     gap: 8px;
-    width: 100%;
 }
 
-.forthclass-down span{
+.signinoptions .otheoptions ul li a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     padding: 8px 16px;
     border: 1px solid rgba(216, 216, 216, 1);
-    flex: 1;
-    text-align: center;
     border-radius: 999px;
+    box-sizing: border-box;
+    text-decoration: none;
     cursor: pointer;
     color: var(--body-text);
     font-size: 14px;
     font-weight: 400;
 }
 
-.forthclass-down span:hover{
-    background-color: var(--primary-bg);
+.signinoptions .otheoptions ul li a:hover{
+  background-color: var(--primary-bg);
 }
 
 
-.login-card .fifthclass{
+/* Icons */
+.signinoptions .otheoptions ul li a i {
+    font-size: 24px;
+}
+
+/* Google */
+.signinoptions .otheoptions ul li a:nth-child(1) i {
+    color: #4285F4;
+}
+
+/* Apple */
+.signinoptions .otheoptions ul li a:nth-child(2) i {
+    color: #000000;
+}
+
+/* Facebook */
+.signinoptions .otheoptions ul li a:nth-child(3) i {
+    color: #1877F2;
+}
+
+.login-container .signup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  color: var(--body-text);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.signup span a{
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.login-container .privacy{
+  color: var(--body-text);
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .authentication .authentication-container{
+    display: block !important;
+  }
+
+  .authentication .authentication-container .authenticate-left{
+    display: none !important;
+  }
+
+  .authentication .authentication-container .authenticate-right{
+    width: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  .authentication .authenticate-right .login-container{
+    padding: 40px 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .authentication .authenticate-right .login-container{
+    padding: 32px 16px !important;
+  }
+
+  .login-container .privacy{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--body-text);
+    text-align: center;
+  }
+
 }
 
-.fifthclass a{
-    color: var(--accent);
-    font-size: 14px;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 480px) {
+  .authenticate-right .login-container{
+    padding: 32px 16px;
+  }
 }
-
-.login-card .sixthclass{
-    color: var(--body-text);
-    font-size: 12px;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
 /* ===================================
    Signup page — st-* namespace
    Uses existing tokens from :root

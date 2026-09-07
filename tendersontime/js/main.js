@@ -352,3 +352,23 @@ document.querySelectorAll('.market-tabs .tab').forEach(tab => {
         });
     });
 });
+
+// loginpagepassword
+const passwordInput = document.querySelector('.password-field input');
+const passwordToggle = document.querySelector('.password-toggle');
+
+passwordToggle.addEventListener('click', () => {
+
+    if (passwordInput.type === 'password') {
+
+        passwordInput.type = 'text';
+        passwordToggle.textContent = 'visibility_off';
+
+    } else {
+
+        passwordInput.type = 'password';
+        passwordToggle.textContent = 'visibility';
+
+    }
+
+});
