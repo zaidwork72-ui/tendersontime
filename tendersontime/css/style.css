@@ -2757,16 +2757,16 @@ img {
         display: none;
     }
 
-    .rightAlign .review {
+    /* .rightAlign .review {
         flex: 0 0 calc((100% - 24px) / 2);
         width: calc((100% - 24px) / 2);
         max-width: calc((100% - 24px) / 2);
-    }
+    } */
 }
 
 /* ================================================================
    900px — tablets portrait
-================================================================ */
+====================================    `============================ */
 @media (max-width: 900px) {
 
     .stats-section .stats-grid {
@@ -3382,16 +3382,18 @@ img {
     }
 
     .rightAlign .review {
-        padding: 18px;
+        padding: 16px;
+        display: flex;
+        flex: 0 0 320px;
     }
 
     .market-region-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .market-list {
+    /* .market-list {
         grid-template-columns: repeat(2, 1fr);
-    }
+    } */
 }
 
 /* ================================================================
@@ -3535,8 +3537,9 @@ img {
         max-width: 100%;
         overflow: hidden;
         border-radius: 4px;
-        border: 1px solid #d8d8d8;
-        box-shadow: inset 1px 0 0 #d8d8d8, inset -1px 0 0 #d8d8d8;
+        border: none;             
+        box-shadow: none;     
+        background: transparent; 
     }
 
     .trusted-logos .grid-line {
@@ -3566,6 +3569,7 @@ img {
         height: 64px;
         border: none;
         padding: 8px 0;
+        background-color: transparent;
     }
 
     @keyframes scrollLogos {
@@ -3582,12 +3586,45 @@ img {
     /* ---------- 3. DISCOVER SECTION — ONLY LATEST TENDERS ---------- */
     .columns {
         grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
     }
 
-    .column-panel:nth-child(2),
+        .column-panel{
+            border-radius: 0;
+        }
+
+        .card-scroll {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 16px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        padding-bottom: 10px;
+    }
+
+        .card-scroll .card {
+        flex: 0 0 320px;
+        width: 260px;
+        margin-bottom: 0;        /* purana vertical margin hata diya */
+        scroll-snap-align: start;
+    }
+
+    /* scrollbar thoda subtle rahe */
+    .card-scroll::-webkit-scrollbar {
+        height: 4px;
+    }
+    .card-scroll::-webkit-scrollbar-thumb {
+        background: #d8d8d8;
+        border-radius: 4px;
+    }
+
+    /* .column-panel:nth-child(2),
     .column-panel:nth-child(3) {
         display: none;
-    }
+    } */
 
 
     /* ---------- 4. READY TO ACCESS — REMOVE IMAGE ---------- */
@@ -3742,8 +3779,8 @@ img {
 
     .rightAlign .review {
         flex: 0 0 320px;
-        box-sizing: border-box;
-        padding: 16px !important;
+        display: flex;
+        padding: 16px;
     }
 
     .rightAlign .review-text{

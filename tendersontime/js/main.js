@@ -328,3 +328,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+
+
+
+// view-all 
+document.querySelectorAll('.market-tabs .tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = tab.dataset.target; // region / country / industries
+
+        // active tab class
+        document.querySelectorAll('.market-tabs .tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // panels show/hide
+        document.querySelectorAll('.market-panel').forEach(panel => {
+            panel.style.display = (panel.dataset.panel === target) ? '' : 'none';
+        });
+
+        // ⬇️ YE NAYA LOGIC ADD KARO — view-all bhi switch karo
+        document.querySelectorAll('.view-all').forEach(link => {
+            link.style.display = (link.dataset.panel === target) ? '' : 'none';
+        });
+    });
+});
