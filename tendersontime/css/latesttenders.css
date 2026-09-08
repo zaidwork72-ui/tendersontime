@@ -448,12 +448,6 @@ body {
     color: var(--light-text);
 }
 
-@media (max-width: 900px) {
-    .filter-row-3 {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* =========================================
    CONTAINER DOWN — 12-column grid: columns = 8, down-right = 4
 ========================================= */
@@ -1270,6 +1264,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 16px;
+    flex-wrap: wrap;
 }
 
 .keywords-down .keywords-card {
@@ -1321,6 +1316,9 @@ body {
     width: min(1400px, calc(100% - 40px));
     margin: 56px auto;
     background-image: url(../assets/Free\ Trial.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 16px;
 }
 
@@ -1476,6 +1474,7 @@ body {
     border: 1px solid rgba(216, 216, 216, 1);
     border-radius: 12px;
     background-color: var(--white);
+    flex-wrap: wrap;
 }
 
 .added-search .added-left{
@@ -1486,6 +1485,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .added-left ul li{
@@ -1525,6 +1526,7 @@ body {
     padding: 8px 12px;
     border-radius: 999px;
     border: 1px solid var(--accent);
+    background: transparent;
 }
 
 .added-right button a{
@@ -1538,3 +1540,309 @@ body {
     justify-content: center;
     gap: 4px;
 }
+
+/* =========================================================
+   ================  RESPONSIVE BREAKPOINTS  =================
+   =========================================================
+   Approach:
+   - >1200px  : desktop, full 12-col layout (default rules above)
+   - 1024px   : tablet-landscape, tighten spacing a touch
+   - 900px    : filter fields drop from 3 columns to 1
+   - 860px    : sidebar (down-right) stacks below the tender list
+   - 768px    : tablet-portrait, hero/section paddings shrink
+   - 600px    : large phones, cards/pagination/recommended stack
+   - 420px    : small phones, tightest spacing, single column
+========================================================= */
+
+/* ---------- 1200px : slightly denser desktop ---------- */
+@media (max-width: 1200px) {
+    .hero-container .hero-heading h2 {
+        font-size: 48px;
+    }
+
+    .offer-container .inside-container {
+        padding: 40px 0 40px 120px;
+    }
+}
+
+/* ---------- 1024px : tablet landscape ---------- */
+@media (max-width: 1024px) {
+    .main-content .main-container {
+        padding: 40px 0;
+        gap: 24px;
+    }
+
+    .hero-container .hero-heading h2 {
+        font-size: 40px;
+    }
+
+    .offer-up h2 {
+        font-size: 32px;
+    }
+
+    .recommended-container .recommended-down {
+        flex-wrap: wrap;
+    }
+
+    .recommended-down .card-down {
+        flex: 1 1 45%;
+    }
+}
+
+/* ---------- 900px : filter form goes single column ---------- */
+@media (max-width: 900px) {
+    .filter-row-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-actions {
+        justify-content: stretch;
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+
+    .filter-actions .filter-search,
+    .filter-actions .filter-reset {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
+}
+
+/* ---------- 860px : sidebar stacks under tender list ---------- */
+@media (max-width: 860px) {
+    .main-container .container-down {
+        grid-template-columns: 1fr;
+    }
+
+    .columns,
+    .down-right {
+        grid-column: 1 / -1;
+    }
+
+    .reco-panel {
+        margin-top: 0;
+    }
+}
+
+/* ---------- 768px : tablet portrait ---------- */
+@media (max-width: 768px) {
+    .hero-container {
+        padding: 32px 0;
+    }
+
+    .hero-container .hero-heading h2 {
+        font-size: 32px;
+        line-height: 130%;
+    }
+
+    .hero-container .hero-para p {
+        font-size: 14px;
+    }
+
+    .container-left h2 {
+        font-size: 20px;
+    }
+
+    .column-header h2 {
+        font-size: 18px;
+    }
+
+    .card-title {
+        font-size: 15px;
+    }
+
+    .offer-access .offer-container {
+        background-image: none;
+        background-color: rgba(28, 54, 87, 1);
+    }
+
+    .offer-container .inside-container {
+        padding: 32px 24px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .offer-up h2 {
+        font-size: 28px;
+    }
+
+    .recommended-container .recommended-down {
+        flex-direction: column;
+    }
+
+    .recommended-down .card-down {
+        flex: 1 1 100%;
+    }
+
+    .last-para .last-para-container {
+        margin: 32px auto;
+    }
+
+    .added-search {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .added-search .added-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* ---------- 600px : large phones ---------- */
+@media (max-width: 600px) {
+    .hero-container .hero-heading h2 {
+        font-size: 26px;
+    }
+
+    .navigation-container {
+        padding: 12px 0;
+    }
+
+    .main-container .container-up {
+        padding: 16px;
+    }
+
+    .container-left h2 {
+        font-size: 18px;
+    }
+
+    .filter-body {
+        padding: 16px 8px;
+    }
+
+    .filter-field,
+    .filter-range,
+    .filter-cost,
+    .df-toggle {
+        height: 44px;
+    }
+
+    .column-panel {
+        padding: 16px;
+    }
+
+    .column-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .df-group {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .df-dropdown {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .card-bottom {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .card-bottom-data .money {
+        gap: 10px;
+    }
+
+    .pagination {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        padding: 16px;
+    }
+
+    .pagination-controls {
+        justify-content: center;
+    }
+
+    .keywords-container .keywords-down {
+        justify-content: flex-start;
+    }
+
+    .offer-up h2 {
+        font-size: 24px;
+    }
+
+    .offer-up p {
+        font-size: 14px;
+    }
+
+    .offer-down button,
+    .btn-region button {
+        width: 100%;
+    }
+
+    .offer-down button a,
+    .btn-region button a {
+        justify-content: center;
+    }
+}
+
+/* ---------- 420px : small phones ---------- */
+@media (max-width: 420px) {
+    .hero-container .hero-heading h2 {
+        font-size: 22px;
+    }
+
+    .hero-container .hero-para p {
+        font-size: 13px;
+    }
+
+    .main-content .main-container {
+        padding: 24px 0;
+        gap: 16px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+
+    .desc {
+        font-size: 13px;
+    }
+
+    .pagination-controls {
+        gap: 4px;
+    }
+
+    .pagination-page,
+    .pagination-arrow {
+        min-width: 28px;
+        height: 28px;
+    }
+
+    .reco-item-title {
+        font-size: 12px;
+    }
+
+    .upper-region {
+        padding: 16px;
+    }
+
+    .heading-region h2 {
+        font-size: 17px;
+    }
+
+    .region-bg-icon {
+        font-size: 100px;
+    }
+
+    .keywords-container .keywords-up {
+        font-size: 16px;
+    }
+
+    .keywords-down .keywords-card {
+        padding: 6px 12px;
+    }
+
+    .added-left ul {
+        gap: 6px;
+    }
+}
+
+/* @media (max-width: 320px){
+
+} */

@@ -1412,8 +1412,8 @@ img {
 }
 
 .rightAlign .review {
-    flex: 0 0 280px;
-    width: 280px;
+    flex: 0 0 360px;
+    width: 360px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -3463,6 +3463,7 @@ img {
         border-radius: 0;
         position: relative;
         top: auto;
+        background-color: var(--white);
         padding: 32px 0;
     }
 
@@ -3838,6 +3839,11 @@ img {
         margin-bottom: 20px;
         font-size: 14px;
     }
+
+        .defence-section {
+            background-color: var(--primary-bg);
+            padding: 20px 0;
+        }
 
     /* HOW DEFENCE TENDERS WORKS */
     .defence-container {

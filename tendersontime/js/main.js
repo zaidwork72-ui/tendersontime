@@ -354,21 +354,66 @@ document.querySelectorAll('.market-tabs .tab').forEach(tab => {
 });
 
 // loginpagepassword
-const passwordInput = document.querySelector('.password-field input');
-const passwordToggle = document.querySelector('.password-toggle');
+(function() {
+    const passwordInput = document.querySelector('.password-field input');
+    const passwordToggle = document.querySelector('.password-toggle');
 
-passwordToggle.addEventListener('click', () => {
+    if (!passwordInput || !passwordToggle) return;
 
-    if (passwordInput.type === 'password') {
+    passwordToggle.addEventListener('click', () => {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            passwordToggle.textContent = 'visibility_off';
+        } else {
+            passwordInput.type = 'password';
+            passwordToggle.textContent = 'visibility';
+        }
+    });
+})();
 
-        passwordInput.type = 'text';
-        passwordToggle.textContent = 'visibility_off';
+// country-tenders 
+(function() {
 
-    } else {
+    const letters = document.querySelectorAll(
+        '.filters-container .byletters li'
+    );
 
-        passwordInput.type = 'password';
-        passwordToggle.textContent = 'visibility';
+    const countryGroups = document.querySelectorAll(
+        '.country-group'
+    );
 
-    }
+    if (!letters.length || !countryGroups.length) return;
 
-});
+    letters.forEach(letter => {
+
+        letter.addEventListener('click', function(e) {
+
+            e.preventDefault();
+
+            // Remove active from all letters
+            letters.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Add active to clicked letter
+            this.classList.add('active');
+
+            // Get clicked letter
+            const selectedLetter = this.textContent.trim();
+
+            // Show only selected country group
+            countryGroups.forEach(group => {
+
+                if (group.dataset.letter === selectedLetter) {
+                    group.classList.add('active');
+                } else {
+                    group.classList.remove('active');
+                }
+
+            });
+
+        });
+
+    });
+
+})();
