@@ -1290,3 +1290,49 @@ body {
 .df-dropdown.has-error .df-toggle {
     border-color: #D91316;
 }
+
+@media (max-width: 1024px) {
+    .main-detail .main-detail-container {
+        grid-template-columns: 1fr;
+        width: calc(100% - 40px);
+        gap: 24px;
+        padding: 32px 0;
+    }
+
+    .main-detail-container .detail-left,
+    .main-detail-container .detail-right {
+        grid-column: 1 / -1;
+        min-width: 0;
+    }
+
+    .down-right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-detail .main-detail-container {
+        width: calc(100% - 32px);
+    }
+
+    .detail-firstlayer .main-information,
+    .detail-firstlayer .other-information {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+    }
+
+    .detail-left .detail-firstlayer {
+        padding: 16px;
+    }
+
+    .df-dropdown {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail-firstlayer .detail-overview {
+        font-size: 18px;
+    }
+}

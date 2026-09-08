@@ -868,3 +868,48 @@ img {
     line-height: 130%;
     color: var(--body-text);
 }
+
+@media (max-width: 1024px) {
+    .main-region .main-region-container {
+        grid-template-columns: 1fr;
+        width: calc(100% - 40px);
+        gap: 24px;
+    }
+
+    .main-region-container .region-left,
+    .main-region-container .region-right {
+        grid-column: 1 / -1;
+    }
+
+    .main-region-container .region-left {
+        grid-template-columns: 1fr;
+    }
+
+    .down-right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-region .main-region-container {
+        width: calc(100% - 32px);
+        margin: 24px auto;
+    }
+
+    .region-left .region-left-card,
+    .region-right .upper-region {
+        min-width: 0;
+    }
+
+    .df-dropdown {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-region-container .region-left {
+        padding: 16px;
+        gap: 16px;
+    }
+}

@@ -204,10 +204,18 @@
     .right-map{
         min-height: 260px;
         order: 2;
+        width: 100%;
     }
 
     .left-form{
         order: 1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-form .up-text h2 {
+        font-size: 24px;
     }
 }
 

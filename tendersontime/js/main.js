@@ -78,6 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    const TOUCH_CAROUSEL_MAX = 768;
+    const isTouchCarousel = () => window.matchMedia(`(max-width: ${TOUCH_CAROUSEL_MAX}px)`).matches;
+
     const initManualSlider = ({
         trackSelector,
         prevSelector,
@@ -103,7 +106,18 @@ document.addEventListener("DOMContentLoaded", () => {
             return Math.max(cards.length - visibleItems, 0);
         };
 
+        const clearTouchMode = () => {
+            track.style.transition = "";
+            track.style.transform = "";
+        };
+
         const updateSlider = () => {
+            if (isTouchCarousel()) {
+                currentIndex = 0;
+                clearTouchMode();
+                return;
+            }
+
             const firstCard = cards[0];
             const gap = parseFloat(window.getComputedStyle(track).gap || "0");
             const step = firstCard.getBoundingClientRect().width + gap;
@@ -115,12 +129,14 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         nextBtn.addEventListener("click", () => {
+            if (isTouchCarousel()) return;
             const maxIndex = getMaxIndex();
             currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
             updateSlider();
         });
 
         prevBtn.addEventListener("click", () => {
+            if (isTouchCarousel()) return;
             const maxIndex = getMaxIndex();
             currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
             updateSlider();
@@ -150,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         prevSelector: "#testimonial-prev",
         nextSelector: "#testimonial-next",
         itemSelector: ".review-set:not(.copy)",
-        getVisibleItems: () => (window.innerWidth <= 768 ? 1 : 2)
+        getVisibleItems: () => 2
     });
 
     initManualSlider({
@@ -158,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
         prevSelector: "#why-prev",
         nextSelector: "#why-next",
         itemSelector: ".lower-set:not(.copy)",
-        getVisibleItems: () => (window.innerWidth <= 768 ? 1 : 2)
+        getVisibleItems: () => 2
     });
 });
 

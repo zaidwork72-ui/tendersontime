@@ -741,3 +741,106 @@ body {
     background-color: rgba(15, 23, 42, 1);
     flex-shrink: 0;
 }
+
+@media (max-width: 1100px) {
+    .who-we .who-we-container {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .who-we-container .who-left,
+    .who-we-container .who-left img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .global-container .global-down {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .global-down .global-down-divider {
+        display: none;
+    }
+
+    .advantages-container .advantages-down {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sources-container .sources-down {
+        flex-wrap: wrap;
+    }
+
+    .sources-down .source-stats {
+        flex: 1 1 calc(50% - 16px);
+        min-width: 0;
+    }
+
+    .final-overview .final-overview-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-overview .overview-container,
+    .who-we .who-we-container,
+    .global-reach .global-container,
+    .key-advantages .advantages-container,
+    .data-sources .sources-container,
+    .final-overview .final-overview-container,
+    .how-it-works .how-container {
+        width: calc(100% - 32px);
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .how-container .how-up h2 {
+        font-size: 28px;
+    }
+
+    .how-container .how-down {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .how-down::before {
+        display: none;
+    }
+
+    .who-up .who-up-heading h2,
+    .global-up .global-up-heading h2,
+    .advantages-up .advantages-up-heading h2,
+    .sources-up .sources-up-heading h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .hero-p p br {
+        display: none;
+    }
+
+    .advantages-container .advantages-down {
+        grid-template-columns: 1fr;
+    }
+
+    .sources-down .source-stats {
+        flex: 1 1 100%;
+    }
+
+    .overview {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .global-down .global-down-stats {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .who-up .who-up-heading h2,
+    .global-up .global-up-heading h2 {
+        font-size: 24px;
+    }
+}
