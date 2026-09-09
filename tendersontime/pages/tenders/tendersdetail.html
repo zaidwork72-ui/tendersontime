@@ -143,25 +143,17 @@
         </section>
         <section class="top-line">
             <div class="top-line-container">
-                <span class="active">
-                    Overview
-                </span>
-                <span>
-                    Tender Details
-                </span>
-                <span>
-                    Purchaser's Detail
-                </span>
-                <span>
-                    Documents (1)
-                </span>
+                <span class="active" data-target="overview" tabindex="0" role="button">Overview</span>
+                <span data-target="tender-details" tabindex="0" role="button">Tender Details</span>
+                <span data-target="purchaser-details" tabindex="0" role="button">Purchaser's Detail</span>
+                <span data-target="documents" tabindex="0" role="button">Documents (1)</span>
             </div>
         </section>
 
         <section class="main-detail">
             <div class="main-detail-container">
                 <div class="detail-left">
-                    <div class="detail-firstlayer">
+                    <div class="detail-firstlayer" id="overview">
                         <div class="detail-overview">
                             <span class="material-symbols-outlined">
                                 dashboard
@@ -267,7 +259,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="detail-secondlayer">
+                    <div class="detail-secondlayer" id="tender-details">
                         <div class="secondlayer-heading">
                             <span class="material-symbols-outlined">
                                 article
@@ -282,7 +274,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="detail-thirdlayer">
+                    <div class="detail-thirdlayer" id="purchaser-details">
                         <div class="thirdlayer-heading">
                             <span class="material-symbols-outlined">
                                 account_circle
@@ -297,7 +289,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="detail-lastlayer">
+                    <div class="detail-lastlayer" id="documents">
                         <div class="lastlayer-heading">
                             <span class="material-symbols-outlined">
                                 download

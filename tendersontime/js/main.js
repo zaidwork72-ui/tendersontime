@@ -323,17 +323,76 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // tenders-detail-active-section-tabs 
 const tabs = document.querySelectorAll('.top-line-container span');
+const detailSections = document.querySelectorAll('.detail-firstlayer, .detail-secondlayer, .detail-thirdlayer, .detail-lastlayer');
+const stickyTopLine = document.querySelector('.top-line');
+const keywordsSection = document.querySelector('.search-keywords');
+
+const setActiveTab = (targetId) => {
+    tabs.forEach(tab => {
+        const isActive = tab.dataset.target === targetId;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+};
+
+const offsetStickyTop = () => {
+    const stickyBar = document.querySelector('.top-line');
+    if (!stickyBar) return 72;
+    return stickyBar.offsetHeight + 16;
+};
+
+const updateTopLineStickiness = () => {
+    if (!stickyTopLine || !keywordsSection) return;
+
+    const keywordsTop = keywordsSection.getBoundingClientRect().top;
+    const shouldStick = keywordsTop > stickyTopLine.offsetHeight + 8;
+
+    stickyTopLine.classList.toggle('is-stuck', shouldStick);
+    stickyTopLine.classList.toggle('is-ended', !shouldStick);
+};
 
 tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
+    const goToSection = () => {
+        const targetId = tab.dataset.target;
+        const targetSection = document.getElementById(targetId);
+        if (!targetSection) return;
 
-        tabs.forEach(item => {
-            item.classList.remove('active');
-        });
+        const top = targetSection.getBoundingClientRect().top + window.scrollY - offsetStickyTop();
+        window.scrollTo({ top, behavior: 'smooth' });
+        setActiveTab(targetId);
+        requestAnimationFrame(updateTopLineStickiness);
+    };
 
-        tab.classList.add('active');
+    tab.addEventListener('click', goToSection);
+    tab.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            goToSection();
+        }
     });
 });
+
+if (detailSections.length) {
+    const observer = new IntersectionObserver((entries) => {
+        const visible = entries
+            .filter(entry => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (!visible) return;
+        setActiveTab(visible.target.id);
+        updateTopLineStickiness();
+    }, {
+        root: null,
+        threshold: [0.3, 0.45, 0.6],
+        rootMargin: `-${offsetStickyTop()}px 0px 0px 0px`
+    });
+
+    detailSections.forEach(section => observer.observe(section));
+}
+
+window.addEventListener('scroll', updateTopLineStickiness, { passive: true });
+window.addEventListener('resize', updateTopLineStickiness);
+updateTopLineStickiness();
 
 
 

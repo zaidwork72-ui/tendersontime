@@ -1410,15 +1410,6 @@ img {
         border-bottom: none !important;
         padding-bottom: 0 !important;
     }
-
-    /* TESTIMONIALS: show two cards per row in the track */
-    .rightAlign .review {
-        flex: 0 0 46%;
-        width: 46%;
-    }
-    .rightAlign-track {
-        gap: 18px;
-    }
 }
 
 /* Adjustments for narrower tablets / large phones (~768px) */
@@ -3663,9 +3654,9 @@ img {
 }
 
 /* ============================================================
-   TABLET — testimonials 2 cards visible, swipe, no arrows
+   TABLET — 2 reviews visible, next review 10% peek
 ============================================================ */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 768px) {
     .why-controls,
     .testimonial-nav,
     .slider-controls {
@@ -3717,26 +3708,77 @@ img {
     }
 
     .rightAlign .review {
-        flex: 0 0 calc((100cqi - 16px) / 2);
-        width: calc((100cqi - 16px) / 2);
-        max-width: calc((100cqi - 16px) / 2);
+        flex: 0 0 calc((100cqi - 16px) / 2.1);
+        width: calc((100cqi - 16px) / 2.1);
+        max-width: calc((100cqi - 16px) / 2.1);
         min-width: 0;
         scroll-snap-align: start;
         scroll-snap-stop: always;
     }
 }
 
-/* Phone — 1 card at 95%, next card 5% peek */
-@media (max-width: 768px) {
+/* Phone — 1 review visible, next review 10% peek */
+@media (max-width: 767px) {
+    .why-controls,
+    .testimonial-nav,
+    .slider-controls {
+        display: none !important;
+    }
+
+    .review-set.copy {
+        display: none !important;
+    }
+
+    .rightAlign-viewport {
+        container-type: inline-size;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .rightAlign-viewport::-webkit-scrollbar {
+        display: none;
+        height: 0;
+    }
+
+    .rightAlign {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow: visible;
+        gap: 0;
+        padding: 0;
+    }
+
     .rightAlign-track,
     .review-set {
         gap: 12px;
     }
 
+    .rightAlign-track {
+        display: flex !important;
+        flex-wrap: nowrap;
+        width: max-content;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .review-set {
+        display: flex !important;
+        flex-wrap: nowrap;
+    }
+
     .rightAlign .review {
-        flex: 0 0 calc(95cqi - 12px);
-        width: calc(95cqi - 12px);
-        max-width: calc(95cqi - 12px);
+        flex: 0 0 calc((100cqi - 12px) / 1.1);
+        width: calc((100cqi - 12px) / 1.1);
+        max-width: calc((100cqi - 12px) / 1.1);
+        min-width: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
 }
 /* 900px–701px: 2 full cards + 10% peek of 3rd */

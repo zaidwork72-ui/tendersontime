@@ -37,11 +37,20 @@
 
 html {
     -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+}
+
+section[id],
+.detail-firstlayer,
+.detail-secondlayer,
+.detail-thirdlayer,
+.detail-lastlayer {
+    scroll-margin-top: 100px;
 }
 
 /* =========================================
@@ -65,9 +74,9 @@ body {
 }
 
 .hero-container .hero-heading h2 {
-    font-size: 56px;
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
     font-weight: 600;
-    line-height: 120%;
+    line-height: 1.2;
 }
 
 .hero-container .hero-heading p {
@@ -130,6 +139,16 @@ body {
     padding: 40px 0 56px 0;
 }
 
+.main-header-container .first-main-container,
+.main-header-container .last-main-container,
+.tender-stats .tender-stats-container,
+.top-line .top-line-container,
+.main-detail .main-detail-container,
+.search-keywords .keywords-container,
+.recommended .recommended-container {
+    max-width: 1400px;
+}
+
 .main-header-container .first-main-container{
     display: flex;
     gap: 16px;
@@ -174,19 +193,20 @@ body {
 }
 
 .second-main-container .main-heading h2{
-    font-size: 24px;
+    font-size: clamp(1.5rem, 2vw, 2rem);
     font-weight: 500;
     color: var(--primary-text);
-    line-height: 32px;
+    line-height: 1.35;
 }
 
 .second-main-container .main-subheading p{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: clamp(0.93rem, 1.2vw, 1rem);
     font-weight: 400;
     color: rgba(67, 68, 69, 1);
+    line-height: 1.6;
 }
 
 .main-header-container .last-main-container{
@@ -205,7 +225,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: auto;
+    cursor: pointer;
 }
 
 .last-main-container .last-content:hover{
@@ -273,25 +293,57 @@ body {
 
 /* top-line-section */
 .top-line{
-    height: auto;
-    width: auto;
+    position: sticky;
+    top: 0;
+    z-index: 25;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid rgba(221, 225, 230, 1);
+    backdrop-filter: blur(6px);
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.top-line.is-ended {
+    position: relative;
+    top: auto;
+    z-index: auto;
+    background: transparent;
+    border-bottom: none;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+.top-line.is-stuck {
+    box-shadow: 0 1px 0 rgba(229, 232, 236, 0.9);
 }
 
 .top-line .top-line-container{
     width: min(1400px, calc(100% - 40px));
-    margin: auto;
-    gap: 24px;
+    margin: 0 auto;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.top-line .top-line-container::-webkit-scrollbar {
+    display: none;
+    height: 0;
 }
 
 .top-line-container span{
+    flex: 0 0 auto;
     padding: 16px 0;
     font-size: 16px;
     font-weight: 400;
     color: var(--body-text);
     cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease;
 }
 
 .top-line-container span:hover{
@@ -300,19 +352,28 @@ body {
 
 .top-line-container .active{
     color: var(--accent);
-    border-bottom: 2px solid var(--accent);
+}
+
+.top-line-container .active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
 }
 
 /* main-detail-section */
 .main-detail{
-    width: auto;
-    height: auto;
+    width: 100%;
     background-color: var(--primary-bg);
 }
 
 .main-detail .main-detail-container{
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     width: min(1400px, calc(100% - 40px));
     margin: 0 auto;
     padding: 56px 0;
@@ -324,6 +385,19 @@ body {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    min-width: 0;
+}
+
+.main-detail-container .detail-right {
+    grid-column: span 4;
+    min-width: 0;
+}
+
+ .detail-firstlayer,
+ .detail-secondlayer,
+ .detail-thirdlayer,
+ .detail-lastlayer {
+    scroll-margin-top: 96px;
 }
 
 .detail-left .detail-firstlayer{
@@ -352,7 +426,7 @@ body {
 
 .detail-firstlayer .main-information{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 24px;
 }
 
@@ -1291,10 +1365,47 @@ body {
     border-color: #D91316;
 }
 
+@media (max-width: 1200px) {
+    .main-header .main-header-container,
+    .tender-stats .tender-stats-container,
+    .top-line .top-line-container,
+    .main-detail .main-detail-container,
+    .search-keywords .keywords-container,
+    .recommended .recommended-container,
+    .navigation-container,
+    .hero-container {
+        width: min(1400px, calc(100% - 32px));
+    }
+}
+
 @media (max-width: 1024px) {
+    .main-header .main-header-container,
+    .tender-stats .tender-stats-container,
+    .top-line .top-line-container,
+    .main-detail .main-detail-container,
+    .search-keywords .keywords-container,
+    .recommended .recommended-container,
+    .navigation-container,
+    .hero-container {
+        width: calc(100% - 32px);
+    }
+
+    .main-header .main-header-container {
+        padding-top: 24px;
+        padding-bottom: 32px;
+    }
+
+    .tender-stats .tender-stats-container {
+        flex-wrap: wrap;
+    }
+
+    .tender-stats-container .tenders-stats-card {
+        flex: 1 1 calc(50% - 8px);
+    }
+
     .main-detail .main-detail-container {
         grid-template-columns: 1fr;
-        width: calc(100% - 40px);
+        width: calc(100% - 32px);
         gap: 24px;
         padding: 32px 0;
     }
@@ -1305,12 +1416,47 @@ body {
         min-width: 0;
     }
 
-    .down-right {
-        width: 100%;
+    .detail-right .bottom-regionn {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 }
 
 @media (max-width: 768px) {
+    .hero-container {
+        padding: 28px 0 24px;
+    }
+
+    .navigation-container {
+        padding: 12px 0;
+        gap: 6px;
+    }
+
+    .main-header .main-header-container {
+        gap: 18px;
+        padding: 20px 0 24px;
+    }
+
+    .main-header-container .first-main-container,
+    .main-header-container .last-main-container {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .main-header-container .last-main-container {
+        justify-content: flex-start;
+    }
+
+    .tender-stats .tender-stats-container {
+        width: calc(100% - 32px);
+        gap: 12px;
+    }
+
+    .tender-stats-container .tenders-stats-card {
+        flex: 1 1 100%;
+    }
+
     .main-detail .main-detail-container {
         width: calc(100% - 32px);
     }
@@ -1321,18 +1467,111 @@ body {
         column-gap: 0;
     }
 
-    .detail-left .detail-firstlayer {
+    .detail-left .detail-firstlayer,
+    .detail-left .detail-secondlayer,
+    .detail-left .detail-thirdlayer,
+    .detail-left .detail-lastlayer,
+    .detail-right .upper-region,
+    .detail-right .bidding-support {
         padding: 16px;
+    }
+
+    .detail-firstlayer .detail-overview,
+    .detail-secondlayer .secondlayer-heading,
+    .detail-thirdlayer .thirdlayer-heading,
+    .detail-lastlayer .lastlayer-heading {
+        font-size: 18px;
+    }
+
+    .main-detail-container .detail-right {
+        gap: 20px;
+    }
+
+    .upper-region .heading-region h2,
+    .heading-regionn h2 {
+        font-size: 18px;
+    }
+
+    .keywords-container .keywords-down {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .recommended .recommended-container {
+        width: 100%;
+        margin: 32px auto;
+        padding: 20px 16px;
+        border-radius: 0;
+    }
+
+    .recommended-container .recommended-down {
+        flex-direction: column;
     }
 
     .df-dropdown {
         min-width: 0;
         width: 100%;
     }
+
+    .other-information .other-information-card:nth-child(2){
+        padding-top: 16px;
+    }
+
+    .main-information .main-information-card:nth-child(2){
+        padding-top: 16px;
+    }
 }
 
 @media (max-width: 480px) {
+    .hero-container .hero-heading h2 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .navigation-container {
+        font-size: 12px;
+    }
+
+    .top-line-container {
+        gap: 16px;
+    }
+
+    .top-line-container span {
+        font-size: 14px;
+        padding: 14px 0;
+    }
+
+    .last-main-container .last-content {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+    }
+
+    .upper-region .btn-region button,
+    .bidding-support .btn-regionn button {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn-region button a,
+    .btn-regionn button a {
+        justify-content: center;
+    }
+
     .detail-firstlayer .detail-overview {
         font-size: 18px;
+    }
+
+    .main-information-card .main-head,
+    .other-information-card .other-head,
+    .detail-lastlayer .lastlayer-subheading,
+    .main-point span,
+    .heading-region p,
+    .heading-regionn p,
+    .keywords-card span {
+        font-size: 14px;
     }
 }
