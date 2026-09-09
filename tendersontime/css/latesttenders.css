@@ -1699,6 +1699,7 @@ video {
 
 /* ---------- 600px : large phones ---------- */
 @media (max-width: 600px) {
+
     .hero-container .hero-heading h2 {
         font-size: 26px;
     }

@@ -967,75 +967,6 @@ img {
 }
 
 /* ========================================
-   RESPONSIVE
-======================================== */
-
-/* @media (max-width: 1100px) {
-
-    .defence-container {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-
-    .defence-content {
-        max-width: 800px;
-    }
-
-    .trusted-logos {
-        max-width: 100%;
-    }
-
-    .defence-visual {
-        justify-content: flex-start;
-    }
-
-    .visual-card {
-        max-width: 700px;
-    }
-
-    .visual-card img {
-        min-height: 260px;
-    }
-} */
-
-
-/* @media (max-width: 700px) {
-
-    .defence-section {
-        padding: 70px 0;
-    }
-
-    .defence-container {
-        width: min(100% - 40px, 1400px);
-    }
-
-    .defence-description {
-        font-size: 14px;
-    }
-
-    .trusted-logos {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .trusted-logo {
-        padding: 12px 8px;
-    }
-} */
-
-
-/* @media (max-width: 450px) {
-
-    .defence-points li {
-        font-size: 14px;
-    }
-
-    .trusted-logos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-} */
-
-
-/* ========================================
    FAQ SECTION
 ======================================== */
 
@@ -1220,70 +1151,6 @@ img {
 .faq-link .material-symbols-outlined {
     font-size: 19px;
 }
-
-/* ========================================
-   RESPONSIVE
-======================================== */
-
-
-/* @media (max-width: 1100px) {
-
-    .faq-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .faq-list {
-        width: 100%;
-    }
-
-    .faq-question {
-        width: 100%;
-    }
-
-    .faq-content {
-        width: 100%;
-    }
-} */
-
-/* @media (max-width: 900px) {
-
-    .faq-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .faq-content {
-        grid-row: 1;
-        max-width: 100%;
-    }
-
-    .faq-list {
-        grid-row: 2;
-    }
-} */
-
-
-/* @media (max-width: 600px) {
-
-    .faq-section {
-        padding: 70px 0;
-    }
-
-    .faq-container {
-        width: min(100% - 40px, 1400px);
-    }
-
-    .faq-question {
-        font-size: 14px;
-        gap: 20px;
-        padding: 14px 16px;
-    }
-
-    .faq-description {
-        font-size: 14px;
-    }
-} */
 
 /* ========================================
    TESTIMONIALS SECTION
@@ -1531,7 +1398,7 @@ img {
 @media (max-width: 1024px) {
     /* MARKET: change grid to 3 columns and adjust borders/padding */
     .market-list {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     .market-item {
         padding-bottom: 12px;
@@ -1539,42 +1406,9 @@ img {
     .market-item:nth-child(3n) {
         border-right: none;
     }
-    .market-item:nth-last-child(-n + 3) {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-
-    /* READY: stack and center image */
-    .ready .ready-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 32px;
-        gap: 24px;
-    }
-    .ready .ready-container .ready-left {
-        max-width: 100%;
-        text-align: center;
-    }
-    .ready .ready-container .ready-right {
-        max-width: 420px;
-        width: 100%;
-    }
-
-    /* WHY: make lower cards horizontally scrollable */
-    .why-defence-tenders .defence-tender-container .lower {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding: 12px 8px;
-        margin: 0 -8px;
-    }
-    .why-defence-tenders .lower-track {
-        display: flex;
-        gap: 16px;
-    }
-    .why-defence-tenders .lower-track .card {
-        flex: 0 0 320px;
-        min-width: 280px;
-        max-width: 320px;
+    .market-item:last-child{
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
     }
 
     /* TESTIMONIALS: show two cards per row in the track */
@@ -1599,20 +1433,6 @@ img {
     .market-item:nth-last-child(-n + 2) {
         border-bottom: none;
         padding-bottom: 0;
-    }
-
-    /* READY: compact stacking */
-    .ready .ready-container {
-        padding: 24px;
-    }
-    .ready .ready-container .ready-left {
-        text-align: left;
-    }
-
-    /* WHY: keep horizontal scroll but reduce card width */
-    .why-defence-tenders .lower-track .card {
-        flex: 0 0 260px;
-        min-width: 240px;
     }
 
     /* TESTIMONIALS: single card view */
@@ -1690,7 +1510,6 @@ img {
 
 .lower .card {
     display: flex;
-    flex: 1 1 240px;
     flex-direction: column;
     padding: 24px;
     background: #fff;
@@ -1846,17 +1665,6 @@ img {
     object-fit: cover;
     border-radius: 16px;
 }
-
-/* @media (max-width: 700px) {
-    .ready {
-        padding: 60px 0;
-    }
-
-    .ready .ready-container {
-        padding: 32px;
-    }
-} */
-
 
 .market-section {
     width: 100%;
@@ -2165,84 +1973,6 @@ img {
     font-size: 12px;
     font-weight: 400;
 }
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-/* @media (max-width: 900px) {
-
-    .market-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .market-item:nth-child(4n) {
-        border-right: 1px solid #eeeeee;
-    }
-
-    .market-item:nth-child(3n) {
-        border-right: none;
-    }
-
-    .market-item:nth-last-child(-n + 4) {
-        border-bottom: 1px solid #eeeeee;
-    }
-
-    .market-item:nth-last-child(-n + 3) {
-        border-bottom: none;
-    }
-
-    .market-region-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-} */
-
-/* @media (max-width: 700px) {
-
-    .market-container {
-        flex-direction: column;
-    }
-
-    .market-left {
-        padding: 28px 24px 10px;
-    }
-
-    .market-description {
-        max-width: 100%;
-    }
-
-    .market-right {
-        padding: 10px 24px 24px;
-    }
-} */
-/* 
-@media (max-width: 500px) {
-
-    .market-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .market-item:nth-child(3n) {
-        border-right: 1px solid #eeeeee;
-    }
-
-    .market-item:nth-child(2n) {
-        border-right: none;
-    }
-
-    .market-item:nth-last-child(-n + 3) {
-        border-bottom: 1px solid #eeeeee;
-    }
-
-    .market-item:nth-last-child(-n + 2) {
-        border-bottom: none;
-    }
-
-    .market-region-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-} */
 
 
 /* =========================
@@ -2572,94 +2302,6 @@ img {
     cursor: pointer;
 }
 
-/* @media (max-width: 900px) {
-    .columns {
-        grid-template-columns: 1fr;
-    }
-} */
-
-/* =========================
-   GLOBAL RESPONSIVE (HERO / STATS)
-========================= */
-
-/* @media (max-width: 1300px) {
-    .stats-container .stats-grid {
-        justify-content: flex-start;
-    }
-} */
-
-/* @media (max-width: 900px) {
-    .hero {
-        padding: 60px 0 100px;
-    }
-
-    .hero-content {
-        max-width: 100%;
-    }
-
-    .search-form {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .keyword-field,
-    .country-field {
-        flex: 1 1 auto;
-    }
-
-    .search-btn {
-        width: 100%;
-    }
-} */
-
-/* @media (max-width: 700px) {
-    .stats-section {
-        padding: 24px;
-        margin-top: -50px;
-    }
-
-    .stat-item {
-        flex: 1 1 100%;
-    }
-
-    .hero-features {
-        gap: 16px 32px;
-    }
-} */
-
-/* @media (max-width: 500px) {
-    .search-box {
-        padding: 20px 16px;
-    }
-
-    .search-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .popular-categories,
-    .search-footer {
-        width: 100%;
-    }
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ============================================================
    MOBILE RESPONSIVE CSS — Defence Tenders
    Breakpoints used: 1300px, 1100px, 900px, 700px, 500px, 400px
@@ -2723,7 +2365,7 @@ img {
     }
 
     .defence-visual {
-        justify-content: center;
+        display: none;
     }
 
     .visual-card {
@@ -2750,20 +2392,30 @@ img {
         padding: 8px 28px 28px;
     }
 
-        .market-list {
-            grid-template-columns: repeat(2, 1fr);
-        }
+    .market-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Step 1: reset — undo desktop's nth-last-child(-n+4) leak */
+    .market-list .market-item {
+        border-bottom: 1px solid rgba(216, 216, 216, 1);
+        padding-bottom: 16px;
+    }
+
+    /* Step 2: remove border-right for 2-col layout (odd items) */
+    .market-list .market-item:nth-child(2n) {
+        border-right: none ;
+    }
+
+    /* Step 3: now remove border-bottom only from actual last row (last 2 items) */
+    .market-list .market-item:nth-last-child(-n + 2) {
+        border-bottom: none ;
+        padding-bottom: 0 ;
+    }
     
-        /* NAYA */
-    
-        .market-item:nth-last-child(-n + 2) {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-    
-        .market-region-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+    .market-region-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
     /* FAQ */
     .faq-container {
@@ -2786,24 +2438,45 @@ img {
     .tes-container .left-align {
         max-width: 100%;
     }
+}
 
-
+@media (max-width: 1100px) and (min-width: 701px) {
     .ready .ready-container {
-    padding: 40px;
-    gap: 32px;
-    justify-content: center;
-}
-.ready .ready-container .ready-left {
-    flex: 1 1 320px;
-    max-width: 100%;
-}
-.ready .ready-container .ready-right {
-    flex: 0 1 280px;
-    max-width: 280px;
-}
+        padding: 32px;
+        gap: 24px;
+        flex-wrap: nowrap;
+    }
 
+    .ready .ready-container .ready-left {
+        flex: 1 1 55%;
+        max-width: 55%;
+    }
 
-    
+    .ready .ready-container .ready-right {
+        flex: 1 1 35%;
+        max-width: 35%;
+        width: auto;
+    }
+
+    /* Font/spacing adjust — narrower column needs smaller type */
+    .ready .ready-container .ready-left .ready-heading h1 {
+        font-size: clamp(24px, 3.2vw, 32px);
+        margin-bottom: 12px;
+    }
+
+    .ready .ready-container .ready-left .ready-para p {
+        font-size: 14px;
+        padding-bottom: 12px;
+    }
+
+    .ready .ready-container .ready-left .ready-para p:last-child {
+        padding-bottom: 20px;
+    }
+
+    .ready-btn {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
 }
 
 /* Desktop: button-driven 2-card carousel; tablet/phone use swipe peek */
@@ -2882,66 +2555,11 @@ img {
         padding: 0;
         margin: 0;
     }
-
-    .why-controls {
-        display: none;
-    }
-
-    #why-prev,
-    #why-next {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        border: 1px solid #d8d8d8;
-        background: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        user-select: none;
-        align-self: center;
-        z-index: 2;
-        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-    }
-
-    #why-prev {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    #why-next {
-        grid-column: 3;
-        grid-row: 2;
-    }
-
-    .lower-track {
-        display: flex;
-        flex-wrap: nowrap;
-        width: 100%;
-        gap: 24px;
-        transform: none !important;
-        transition: none;
-    }
-
-    .lower-set {
-        display: contents;
-    }
-
-    .lower-set.copy {
-        display: none;
-    }
-
-    .lower .card {
-        flex: 1 1 0;
-        width: auto;
-        max-width: none;
-        min-width: 0;
-    }
 }
 
 /* ================================================================
    900px — tablets portrait
-====================================    `============================ */
+================================================================ */
 @media (max-width: 900px) {
 
     .stats-section .stats-grid {
@@ -2990,34 +2608,6 @@ img {
     /* WHY DEFENCE TENDERS */
     .why-defence-tenders {
         padding-top: 40px;
-    }
-
-    .lower .card {
-        flex: 1 1 45%;
-    }
-
-    /* READY SECTION */
-    .ready {
-        padding-top: 0;
-    }
-
-    .ready .ready-container {
-        padding: 0;
-        justify-content: flex-start;
-        text-align: left;
-        background-color: transparent;
-    }
-
-    .ready .ready-container .ready-left {
-        align-items: center;
-    }
-
-    .ready-left .ready-button {
-        justify-content: center;
-    }
-
-    .ready .ready-container .ready-right {
-        order: -1;
     }
 
     /* DEFENCE SECTION */
@@ -3198,7 +2788,7 @@ img {
         border-right: none;
     }
 
-    .market-item:nth-last-child(-n + 4) {
+    .market-item:nth-last-child(-n + 2) {
         border-bottom: 1px solid #eeeeee;
     }
 
@@ -3218,14 +2808,58 @@ img {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* WHY DEFENCE TENDERS */
-    .lower .card {
-        flex: 1 1 100%;
+    /* READY SECTION — stacked, image on top, equally proportionate */
+    .ready {
+        padding-top: 60px;
     }
 
-    /* READY SECTION */
+    .ready .ready-container {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 24px;
+        padding: 32px 24px;
+    }
+
+    .ready .ready-container .ready-left {
+        flex: 1 1 auto;
+        max-width: 100%;
+        order: 2;
+    }
+
+    .ready .ready-container .ready-right {
+        flex: none;
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+        order: 1;
+    }
+
+    /* Typography — mobile-stack needs smaller, tighter type */
     .ready .ready-container .ready-left .ready-heading h1 {
-        font-size: 30px;
+        font-size: 24px;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+
+    .ready .ready-container .ready-left .ready-para p {
+        font-size: 14px;
+        text-align: center;
+        padding-bottom: 8px;
+    }
+
+    .ready .ready-container .ready-left .ready-para p:last-child {
+        padding-bottom: 20px;
+    }
+
+    .ready-left .ready-button {
+        justify-content: center;
+    }
+
+    .ready-btn {
+        width: 100%;
+        justify-content: center;
     }
 
     /* TESTIMONIALS */
@@ -3275,6 +2909,13 @@ img {
     /* DISCOVER HEADER */
     .discover-header h1 {
         font-size: 24px;
+        padding: 0 16px;
+    }
+
+        .card-scroll .card {
+        flex: 0 0 calc((100cqi - 12px) / 1.1) !important;
+        width: calc((100cqi - 12px) / 1.1) !important;
+        max-width: calc((100cqi - 12px) / 1.1) !important;
     }
 
 
@@ -3418,13 +3059,18 @@ img {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
+
+        .market-list .market-item {
+        border-bottom: 1px solid rgba(216, 216, 216, 1) !important;
+        padding-bottom: 16px !important;
+    }
         .market-list .market-item:nth-child(n + 7) {
         display: none;
     }
 
     .market-list .market-item:nth-child(6){
-        border-bottom: none;
-        padding-bottom: 0;
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
     }
 
     .market-item:nth-child(2n) {
@@ -3566,9 +3212,6 @@ img {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    /* .market-list {
-        grid-template-columns: repeat(2, 1fr);
-    } */
 }
 
 /* ================================================================
@@ -3619,7 +3262,6 @@ img {
     }
 
     .trusted-logos,
-    .lower,
     .rightAlign {
         min-width: 0;
         width: 100%;
@@ -3783,13 +3425,6 @@ img {
         padding-bottom: 10px;
     }
 
-        .card-scroll .card {
-        flex: 0 0 320px;
-        width: 260px;
-        margin-bottom: 0;        /* purana vertical margin hata diya */
-        scroll-snap-align: start;
-    }
-
     /* scrollbar thoda subtle rahe */
     .card-scroll::-webkit-scrollbar {
         height: 4px;
@@ -3797,67 +3432,6 @@ img {
     .card-scroll::-webkit-scrollbar-thumb {
         background: #d8d8d8;
         border-radius: 4px;
-    }
-
-    /* .column-panel:nth-child(2),
-    .column-panel:nth-child(3) {
-        display: none;
-    } */
-
-
-    /* ---------- 4. READY TO ACCESS — REMOVE IMAGE ---------- */
-    .ready-right {
-        display: none;
-    }
-
-    .ready .ready-container {
-        justify-content: center;
-    }
-
-    .ready .ready-container .ready-left {
-        max-width: 100%;
-    }
-
-
-    /* Why Defence Tenders — manual slider */
-    .defence-tender-container {
-        min-width: 0;
-    }
-
-    .lower {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding: 12px 0;
-        margin: 0;
-    }
-
-    .lower-track {
-        display: flex;
-        flex-wrap: nowrap;
-        width: max-content;
-        gap: 20px;
-        will-change: transform;
-        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .lower-set,
-    .lower-set.copy {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 20px;
-        padding-right: 20px;
-    }
-
-    .lower .card {
-        flex: 0 0 320px;
-        display: flex;
-        padding: 16px;
-    }
-
-    .why-controls {
-        display: none;
     }
 
     .card .card-heading h2 {
@@ -3955,7 +3529,6 @@ img {
 
 /* ============================================================
    FINAL FIX — Har section mein sirf 16px side padding (mobile)
-   Ye block file ke sabse LAST mein hona chahiye
 ============================================================ */
 @media (max-width: 768px) {
 
@@ -3990,6 +3563,7 @@ img {
     .discover-header p {
         margin-bottom: 20px;
         font-size: 14px;
+        padding: 0 16px;
     }
 
         .defence-section {
@@ -4008,8 +3582,6 @@ img {
     /* DISCOVER SECTION */
     .discover-section {
         width: 100%;
-        padding-left: 16px;
-        padding-right: 16px;
         margin: 0;
         box-sizing: border-box;
     }
@@ -4091,7 +3663,7 @@ img {
 }
 
 /* ============================================================
-   TABLET — 2 cards visible, swipe, no arrows
+   TABLET — testimonials 2 cards visible, swipe, no arrows
 ============================================================ */
 @media (max-width: 1024px) {
     .why-controls,
@@ -4100,12 +3672,10 @@ img {
         display: none !important;
     }
 
-    .lower-set.copy,
     .review-set.copy {
         display: none !important;
     }
 
-    .lower,
     .rightAlign-viewport {
         container-type: inline-size;
         overflow-x: auto;
@@ -4117,46 +3687,9 @@ img {
         -ms-overflow-style: none;
     }
 
-    .lower::-webkit-scrollbar,
     .rightAlign-viewport::-webkit-scrollbar {
         display: none;
         height: 0;
-    }
-
-    .defence-tender-container .lower {
-        display: block;
-        width: 100%;
-        padding: 4px 0 8px;
-        margin: 0;
-    }
-
-    .lower-track {
-        display: flex !important;
-        flex-wrap: nowrap;
-        width: max-content;
-        max-width: none;
-        gap: 16px;
-        transform: none !important;
-        transition: none !important;
-        will-change: auto;
-    }
-
-    .lower-set {
-        display: flex !important;
-        flex-wrap: nowrap;
-        gap: 16px;
-        padding-right: 0;
-    }
-
-    .lower .card,
-    .why-defence-tenders .lower-track .card,
-    .why-defence-tenders .lower-track .lower-set .card {
-        flex: 0 0 calc((100cqi - 16px) / 2);
-        width: calc((100cqi - 16px) / 2);
-        max-width: calc((100cqi - 16px) / 2);
-        min-width: 0;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
     }
 
     .rightAlign {
@@ -4168,12 +3701,6 @@ img {
         padding: 0;
     }
 
-    .rightAlign-viewport {
-        width: 100%;
-        order: 1;
-        overflow-x: auto;
-    }
-
     .rightAlign-track {
         display: flex !important;
         flex-wrap: nowrap;
@@ -4181,14 +3708,12 @@ img {
         gap: 16px;
         transform: none !important;
         transition: none !important;
-        will-change: auto;
     }
 
     .review-set {
         display: flex !important;
         flex-wrap: nowrap;
         gap: 16px;
-        padding-right: 0;
     }
 
     .rightAlign .review {
@@ -4203,23 +3728,18 @@ img {
 
 /* Phone — 1 card at 95%, next card 5% peek */
 @media (max-width: 768px) {
-    .lower-track,
-    .lower-set,
     .rightAlign-track,
     .review-set {
         gap: 12px;
     }
 
-    .lower .card,
-    .why-defence-tenders .lower-track .card,
-    .why-defence-tenders .lower-track .lower-set .card,
     .rightAlign .review {
         flex: 0 0 calc(95cqi - 12px);
         width: calc(95cqi - 12px);
         max-width: calc(95cqi - 12px);
     }
 }
-
+/* 900px–701px: 2 full cards + 10% peek of 3rd */
 @media (max-width: 900px) {
     .card-scroll {
         container-type: inline-size;
@@ -4242,13 +3762,128 @@ img {
     }
 
     .card-scroll .card {
-        flex: 0 0 85%;
-        width: 85%;
-        flex: 0 0 calc(95cqi - 12px);
-        width: calc(95cqi - 12px);
-        max-width: calc(95cqi - 12px);
+        flex: 0 0 calc((100cqi - 24px) / 2.1);
+        width: calc((100cqi - 24px) / 2.1);
+        max-width: calc((100cqi - 24px) / 2.1);
         margin-bottom: 0;
         scroll-snap-align: start;
         scroll-snap-stop: always;
     }
+}
+
+/* ============================================================
+   WHY DEFENCE TENDERS — CARD LAYOUT (single source of truth)
+   Mobile (upto 767px): 1 card + ~10% peek
+   Tablet (768px – 1023px): 2 cards + ~10% peek of 3rd
+   Desktop / Laptop (1024px+): 4 equal cards, no scroll
+   NOTE: every rule below is scoped under ".why-defence-tenders"
+   so specificity is IDENTICAL at every breakpoint — only the
+   media query range decides which one applies. This avoids the
+   old bug where a more specific selector from one breakpoint
+   was overriding a less specific selector in another breakpoint.
+============================================================ */
+
+.why-defence-tenders .defence-tender-container .lower {
+    container-type: inline-size;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline-start: 0px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 4px 16px 8px;
+    margin: 0;
+}
+
+.why-defence-tenders .defence-tender-container .lower::-webkit-scrollbar {
+    display: none;
+    height: 0;
+}
+
+.why-defence-tenders .lower-track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 12px;
+}
+
+.why-defence-tenders .lower-set {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.why-defence-tenders .lower-set.copy {
+    display: none !important;
+}
+
+.why-defence-tenders .lower .card {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-margin-inline-start: 0px;
+}
+
+/* MOBILE (default, upto 424px): 1 card + ~10% peek */
+.why-defence-tenders .lower .card {
+    flex: 0 0 calc((100cqi - 36px) / 1.1);
+    width: calc((100cqi - 36px) / 1.1);
+    max-width: calc((100cqi - 36px) / 1.1);
+    min-width: 0;
+}
+
+/* 425px – 767px: 1 card + ~10% peek (wider gutter) */
+@media (min-width: 425px) and (max-width: 767px) {
+    .why-defence-tenders .lower .card {
+        flex: 0 0 calc((100cqi - 44px) / 1.1);
+        width: calc((100cqi - 44px) / 1.1);
+        max-width: calc((100cqi - 44px) / 1.1);
+    }
+}
+
+/* TABLET 768px – 1023px: 2 cards + ~10% peek of 3rd */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .why-defence-tenders .lower .card {
+        flex: 0 0 calc((100cqi - 48px) / 2.1);
+        width: calc((100cqi - 48px) / 2.1);
+        max-width: calc((100cqi - 48px) / 2.1);
+    }
+}
+
+/* DESKTOP / LAPTOP 1024px+: 4 equal cards, no scroll */
+@media (min-width: 1024px) {
+    .why-defence-tenders .defence-tender-container .lower {
+        overflow: visible;
+        scroll-snap-type: none;
+        container-type: normal;
+        padding: 12px 4px;
+        margin: 0;
+    }
+
+    .why-defence-tenders .lower-track {
+        width: 100%;
+        gap: 24px;
+    }
+
+    .why-defence-tenders .lower-set {
+        width: 100%;
+        gap: 24px;
+    }
+
+    .why-defence-tenders .lower .card {
+        flex: 1 1 0;
+        width: auto;
+        max-width: none;
+    }
+}
+
+.why-controls,
+#why-prev,
+#why-next {
+    display: none !important;
 }

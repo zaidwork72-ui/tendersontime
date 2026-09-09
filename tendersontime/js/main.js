@@ -78,6 +78,55 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    const setupWhyDefenceInfiniteScroll = () => {
+        const whySection = document.querySelector('.why-defence-tenders');
+        if (!whySection) return;
+
+        const lower = whySection.querySelector('.defence-tender-container .lower');
+        const track = whySection.querySelector('.lower-track');
+        const sourceSet = whySection.querySelector('.lower-set:not(.copy)');
+
+        if (!lower || !track || !sourceSet) return;
+
+        const getTabletMode = () => window.matchMedia('(max-width: 900px)').matches;
+
+        const ensureClone = () => {
+            if (!getTabletMode()) {
+                const clone = track.querySelector('.lower-set.clone');
+                if (clone) clone.remove();
+                lower.scrollLeft = 0;
+                return;
+            }
+
+            if (track.querySelector('.lower-set.clone')) return;
+
+            const cloneSet = sourceSet.cloneNode(true);
+            cloneSet.classList.add('clone');
+            track.appendChild(cloneSet);
+
+            const setGap = parseFloat(getComputedStyle(track).gap || '0');
+            const totalWidth = Array.from(track.querySelectorAll('.lower-set')).reduce((sum, set) => sum + set.scrollWidth + setGap, 0) - setGap;
+            const wrapPoint = totalWidth / 2;
+            lower.dataset.wrapPoint = String(wrapPoint);
+        };
+
+        const handleInfiniteScroll = () => {
+            if (!getTabletMode()) return;
+            const wrapPoint = Number(lower.dataset.wrapPoint || 0);
+            if (!wrapPoint) return;
+
+            if (lower.scrollLeft >= wrapPoint - 12) {
+                lower.scrollLeft -= wrapPoint;
+            }
+        };
+
+        ensureClone();
+        lower.addEventListener('scroll', handleInfiniteScroll, { passive: true });
+        window.addEventListener('resize', ensureClone);
+    };
+
+    setupWhyDefenceInfiniteScroll();
+
     const TOUCH_CAROUSEL_MAX = 768;
     const isTouchCarousel = () => window.matchMedia(`(max-width: ${TOUCH_CAROUSEL_MAX}px)`).matches;
 
@@ -169,13 +218,13 @@ document.addEventListener("DOMContentLoaded", () => {
         getVisibleItems: () => 2
     });
 
-    initManualSlider({
-        trackSelector: ".lower-track",
-        prevSelector: "#why-prev",
-        nextSelector: "#why-next",
-        itemSelector: ".lower-set:not(.copy)",
-        getVisibleItems: () => 2
-    });
+    // initManualSlider({
+    //     trackSelector: ".lower-track",
+    //     prevSelector: "#why-prev",
+    //     nextSelector: "#why-next",
+    //     itemSelector: ".lower-set:not(.copy)",
+    //     getVisibleItems: () => 2
+    // });
 });
 
 
